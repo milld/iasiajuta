@@ -1,7 +1,7 @@
-.BigImage {
+.ProfileImage {
 }
 
-.BigImage-imageContainer {
+.ProfileImage-imageContainer {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -11,10 +11,9 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
-  z-index: -1;
 }
 
-.BigImage-half {
+.ProfileImage-half {
   max-height: 60vh;
   min-height: 400px;
 }

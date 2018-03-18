@@ -1,0 +1,20 @@
+.Search {
+  position: relative;
+}
+
+.Search input {
+  width: 480px;
+  padding: 8px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 5px;
+}
+
+.Search i {
+  font-size: 10px;
+  margin-top: -5px;
+  margin-left: 12px;
+  position: absolute;
+  top: 50%;
+}

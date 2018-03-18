@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import './BigImage.css';
+import './ProfileImage.css';
 
-class BigImage extends Component {
+class ProfileImage extends Component {
   renderImage({ src, alt, link, half }) {
     const style = {
       backgroundImage: `url(${src})`
@@ -10,7 +10,7 @@ class BigImage extends Component {
     const className = 'BigImage-imageContainer' + (half ? ' BigImage-half ' : '');
 
     const image = !src ? null : (
-      <div className='BigImage'>
+      <div className="BigImage">
         <div className={className} style={style}></div>
       </div>
     );
@@ -23,16 +23,16 @@ class BigImage extends Component {
   };
 }
 
-BigImage.defaultProps = {
+ProfileImage.defaultProps = {
   src: null,
   alt: '',
   link: null
 };
 
-BigImage.PropTypes = {
+ProfileImage.PropTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
   link: PropTypes.string
 };
 
-export default BigImage;
+export default ProfileImage;
