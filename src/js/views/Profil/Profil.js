@@ -5,16 +5,17 @@ import Search from '../../components/Search/Search';
 import Opportunities from '../../components/Opportunities/Opportunities';
 import Footer from '../../components/Footer/Footer';
 import Button from '../../components/Button/Button';
-import './Oportunitati.css';
+import ProfileImage from '../../components/Image/ProfileImage';
+import ProfileProgress from './ProfileProgress';
+import './Profil.css';
 
-class Oportunitati extends Component {
-  renderHomepage({ backgroundImage, title }) {
+class Profil extends Component {
+  renderHomepage({ backgroundImage, title, subtitle }) {
     return (
       <div className='Oportunitati'>
-        <BigImage src={backgroundImage} alt={title} half={true} />
-        <Title content={title} />
-        <Search />
-        <Button link="/oportunitati/nou" content="Adauga" />
+        <Title content={title} subtitle={subtitle} />
+        <ProfileImage src='http://via.placeholder.com/350x150' alt='Placeholder' />
+        <ProfileProgress />
         <Opportunities />
         <Footer />
       </div>
@@ -26,12 +27,13 @@ class Oportunitati extends Component {
   };
 }
 
-Oportunitati.defaultProps = {
+Profil.defaultProps = {
   backgroundImage: 'https://cvhf.org.uk/wp-content/uploads/2015/11/volunteering-1400x630.jpg?x35849',
-  title: 'IașiAjută'
+  title: 'IașiAjută',
+  subtitle: 'Emilian Damian'
 };
 
-Oportunitati.PropTypes = {
+Profil.PropTypes = {
 };
 
-export default Oportunitati;
+export default Profil;

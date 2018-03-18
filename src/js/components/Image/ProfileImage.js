@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import './ProfileImage.css';
+import './Image.css';
 
 class ProfileImage extends Component {
   renderImage({ src, alt, link, half }) {
@@ -7,10 +7,10 @@ class ProfileImage extends Component {
       backgroundImage: `url(${src})`
     };
 
-    const className = 'BigImage-imageContainer' + (half ? ' BigImage-half ' : '');
+    const className = 'Image-imageContainer' + (half ? ' Image-half ' : '');
 
     const image = !src ? null : (
-      <div className="BigImage">
+      <div className='Image ProfileImage'>
         <div className={className} style={style}></div>
       </div>
     );

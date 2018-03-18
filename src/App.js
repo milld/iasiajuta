@@ -12,6 +12,9 @@ import './App.css';
 import BigImage from './js/components/Image/BigImage';
 import Oportunitati from './js/views/Oportunitati/Oportunitati';
 import Despre from './js/views/Despre/Despre';
+import OportunitateExistenta from './js/views/Oportunitati/OportunitateExistenta';
+import OportunitateNoua from './js/views/Oportunitati/OportunitateNoua';
+import Profil from './js/views/Profil/Profil';
 /// /TEST
 
 class App extends Component {
@@ -130,10 +133,21 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>TEST</h1>
-        <Oportunitati />
+        <h1>------------------------------------------- TEST</h1>
+        <OportunitateExistenta />
+        <h1>------------------------------------------- TEST</h1>
         <Despre />
-        <h1>TEST</h1>
+        <h1>------------------------------------------- TEST</h1>
+        <Oportunitati />
+        <h1>------------------------------------------- TEST</h1>
+        <Profil />
+        <h1>------------------------------------------- TEST</h1>
+        <OportunitateNoua />
+        <h1>------------------------------------------- TEST</h1>
+        <h1>------------------------------------------- TEST</h1>
+        <h1>------------------------------------------- TEST</h1>
+        <h1>------------------------------------------- TEST</h1>
+        <h1>------------------------------------------- TEST</h1>
       </div>
     );
 
