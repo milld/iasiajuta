@@ -4,6 +4,8 @@
 
 #### Detaliile ultimului build
 
+[![Build Status](https://travis-ci.org/milld/iasiajuta.svg?branch=master)](https://travis-ci.org/milld/iasiajuta)
+
 <a href="https://snyk.io/test/github/milld/iasiajuta"><img src="https://snyk.io/test/github/milld/iasiajuta/badge.svg" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/milld/iasiajuta" style="max-width:100%;"/></a>
 
 #### Open Source & Free
