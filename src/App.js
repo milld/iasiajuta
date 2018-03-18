@@ -131,6 +131,8 @@ class App extends Component {
   }
 
   render() {
+    return <Oportunitati />;
+
     return (
       <div>
         <h1>------------------------------------------- TEST</h1>

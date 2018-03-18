@@ -33,8 +33,8 @@ class Opportunity extends Component {
         {this.renderLogo({...this.props})}
       </div>
     );
-  };
-}
+  }
+};
 
 Opportunity.defaultProps = {
   title: 'Heading',
@@ -45,11 +45,6 @@ Opportunity.defaultProps = {
 };
 
 Opportunity.PropTypes = {
-  title: '',
-  image: '',
-  button: '',
-  description: '',
-  logo: ''
 };
 
 export default Opportunity;
