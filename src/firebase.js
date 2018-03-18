@@ -1,12 +1,12 @@
 import firebase from 'firebase';
 
 const config = {
-  apiKey: 'AIzaSyBwwffZl09OqzQvu9GtOynqibef2Qh8dXc',
-  authDomain: 'test-db-e095e.firebaseapp.com',
-  databaseURL: 'https://test-db-e095e.firebaseio.com',
-  projectId: 'test-db-e095e',
-  storageBucket: 'test-db-e095e.appspot.com',
-  messagingSenderId: '182747176288'
+  apiKey: 'AIzaSyB8eSEEmN0GSIk-RNZsNFTW9IYgwv9kMSo',
+  authDomain: 'iasiajuta-c3a12.firebaseapp.com',
+  databaseURL: 'https://iasiajuta-c3a12.firebaseio.com',
+  projectId: 'iasiajuta-c3a12',
+  storageBucket: 'iasiajuta-c3a12.appspot.com',
+  messagingSenderId: '498580213209'
 };
 
 firebase.initializeApp(config);

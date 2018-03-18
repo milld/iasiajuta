@@ -6,7 +6,8 @@
     "firebase": "^3.8.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "react-file-input": "^0.2.5"
+    "react-file-input": "^0.2.5",
+    "react-redux": "^5.0.7"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"
