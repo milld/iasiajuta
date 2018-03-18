@@ -1,5 +1,13 @@
 .App {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.App {
   text-align: center;
+}
+
+.App input {
+  width: 480px;
 }
 
 .logo-animate {
