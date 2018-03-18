@@ -8,13 +8,14 @@ IasiAjuta va fi Free si Open Source tot timpul
 
 Cod sursa proiect: https://github.com/milld/iasiajuta
 
-Document donatii / platforma: https://docs.google.com/spreadsheets/d/1FK-hN8_foDm0tToiuTyelfBD8AdOlDJZUchyyqOCspg/
+Document platforma / donatii: https://docs.google.com/spreadsheets/d/1FK-hN8_foDm0tToiuTyelfBD8AdOlDJZUchyyqOCspg/
 
 #### Cine poate contribui?
 
-Oricine cu cunostinte minime de programare web
+Oricine
 
 #### Site oficial
 
 www.iasiajuta.ro
 
+![](http://blog.mgechev.com/images/open-source/logo.png)
