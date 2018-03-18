@@ -1,4 +1,8 @@
 language: node_js
-node_js: 6
-set -e
-npm run build
+node_js:
+  - "9"
+sudo: false
+
+install:
+  - npm install
+  - npm run build
