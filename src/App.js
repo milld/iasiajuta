@@ -8,6 +8,11 @@ import reactLogo from './react-logo.svg';
 import firebaseLogo from './firebase-logo.svg';
 import './App.css';
 
+/// TEST
+import BigImage from './js/components/Image/BigImage';
+import Oportunitati from './js/views/Oportunitati/Oportunitati';
+/// /TEST
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -122,8 +127,13 @@ class App extends Component {
   }
 
   render() {
+    return <Oportunitati />;
+
     return (
       <div className="App">
+        <h1>TEST</h1>
+        <BigImage src="https://cvhf.org.uk/wp-content/uploads/2015/11/volunteering-1400x630.jpg?x35849" alt="IasiAjuta" />
+        <h1>/TEST</h1>
         <div className="App-nav">
           <span className="App-nav-title">React + Firebase Setup</span>
           <span className="App-nav-button">{this.state.currentUser.email ? this.displayCurrentUser() : <a href="#" onClick={this.signIn}>Sign In</a>}</span>
