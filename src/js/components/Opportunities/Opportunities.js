@@ -1,8 +1,16 @@
 import React, { Component, PropTypes } from 'react';
+import Opportunity from '../Opportunity/Opportunity';
 
 class Opportunities extends Component {
   render() {
-    return null;
+    return (
+      <div>
+        <Opportunity />
+        <Opportunity />
+        <Opportunity />
+        <Opportunity />
+      </div>
+    )
   };
 }
 

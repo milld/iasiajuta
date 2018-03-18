@@ -4,6 +4,7 @@
 
 .Search input {
   width: 480px;
+  height: 30px;
   padding: 8px;
   padding-left: 30px;
   box-sizing: border-box;

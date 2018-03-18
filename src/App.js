@@ -11,6 +11,7 @@ import './App.css';
 /// TEST
 import BigImage from './js/components/Image/BigImage';
 import Oportunitati from './js/views/Oportunitati/Oportunitati';
+import Despre from './js/views/Despre/Despre';
 /// /TEST
 
 class App extends Component {
@@ -127,7 +128,14 @@ class App extends Component {
   }
 
   render() {
-    return <Oportunitati />;
+    return (
+      <div>
+        <h1>TEST</h1>
+        <Oportunitati />
+        <Despre />
+        <h1>TEST</h1>
+      </div>
+    );
 
     return (
       <div className="App">

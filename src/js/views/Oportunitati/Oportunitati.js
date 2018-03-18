@@ -4,6 +4,7 @@ import Title from '../../components/Title/Title';
 import Search from '../../components/Search/Search';
 import Opportunities from '../../components/Opportunities/Opportunities';
 import Footer from '../../components/Footer/Footer';
+import Button from '../../components/Button/Button';
 import './Oportunitati.css';
 
 class Homepage extends Component {
@@ -13,6 +14,7 @@ class Homepage extends Component {
         <BigImage src={backgroundImage} alt={title} half={true} />
         <Title content={title} />
         <Search />
+        <Button link="/oportunitati/nou" content="Adauga" />
         <Opportunities />
         <Footer />
       </div>
