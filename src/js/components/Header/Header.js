@@ -5,12 +5,27 @@ import ProfileImage from '../Image/ProfileImage';
 
 class Header extends Component {
   state = {
-    menuToggled: false
+    menuToggled: false,
+    resetTimeout: null
   };
 
   toggleMenu() {
     this.setState({
       menuToggled: !this.state.menuToggled
+    }, () => {
+      if (this.state.menuToggled) {
+        if (this.state.resetTimeout) {
+          clearTimeout(this.state.resetTimeout);
+        }
+
+        this.setState({
+          resetTimeout: setTimeout(() => {
+            this.setState({
+              menuToggled: false
+            });
+          }, 10000)
+        });
+      }
     });
   }
 

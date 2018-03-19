@@ -1,11 +1,16 @@
 .Button {
-  width: 480px;
-  height: 30px;
+  width: 500px;
+  height: 40px;
   background-color: #2eec71;
   border-radius: 5px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-transform: uppercase;
+}
+
+.Button a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
 }

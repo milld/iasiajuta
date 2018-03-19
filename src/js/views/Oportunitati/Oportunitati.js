@@ -11,11 +11,16 @@ class Oportunitati extends Component {
   renderHomepage({ backgroundImage, title }) {
     return (
       <div className='Oportunitati'>
-        <BigImage src={backgroundImage} alt={title} half={true} />
-        <Title content={title} />
-        <Search />
-        <Button link="/oportunitati/nou" content="Adauga" />
-        <Opportunities />
+        <BigImage src={backgroundImage} alt={title} half={true}>
+          <Title content={title} subtitle='Ajutăm voluntariatul impreună' />
+
+          <div className='Oportunitati-SearchBar'>
+            <Search />
+            <Button link="/oportunitati/nou" content="Adaugă" />
+          </div>
+
+          <Opportunities />
+        </BigImage>
         <Footer />
       </div>
     );
@@ -27,7 +32,7 @@ class Oportunitati extends Component {
 }
 
 Oportunitati.defaultProps = {
-  backgroundImage: 'https://cvhf.org.uk/wp-content/uploads/2015/11/volunteering-1400x630.jpg?x35849',
+  backgroundImage: 'https://i.imgur.com/BZ4DPfR.jpg',
   title: 'IașiAjută'
 };
 

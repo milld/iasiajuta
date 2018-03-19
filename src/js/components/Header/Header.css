@@ -35,7 +35,6 @@ header nav a {
   font-weight: 700;
   color: #2eec71;
   text-decoration: none;
-  text-transform: uppercase;
   margin-left: 8px;
   transition-duration: 0.2s;
 }
