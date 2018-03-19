@@ -1,5 +1,8 @@
 import { auth, googleAuthProvider, facebookAuthProvider } from '../../../firebase';
 
+const USER = 'user';
+const USER_CREDENTIAL = 'userCredential';
+
 const loginWithGoogle = () => new Promise((resolve, reject) => {
     auth.signInWithPopup(googleAuthProvider).then(({ user, credential}) => {
         resolve({ user, credential });
@@ -9,22 +12,38 @@ const loginWithGoogle = () => new Promise((resolve, reject) => {
     });
 })
 
+const loginWithFacebook = () => new Promise((resolve, reject) => {
+    auth.signInWithPopup(facebookAuthProvider).then(({ user, credential }) => {
+        resolve({ user, credential });
+    })
+        .catch((err) => {
+            reject(err);
+        });
+})
+
 const setUserInLocalStorage = (user, credential) => {
-    localStorage.setItem('user', JSON.stringify(user));
-    localStorage.setItem('userCredential', JSON.stringify(credential));
+    localStorage.setItem(USER, JSON.stringify(user));
+    localStorage.setItem(USER_CREDENTIAL, JSON.stringify(credential));
 }
 
-const loginWithFacebook = () => new Promise((resolve, reject) => {
-    auth.signInWithPopup(facebookAuthProvider).then((response) => {
-        resolve(response);
-    })
-    .catch((err) => {
-        reject(err);
-    });
-})
+const deleteUserFromLocalStorage = () => {
+    localStorage.removeItem(USER);
+    localStorage.removeItem(USER_CREDENTIAL);
+}
+
+const getUserFromLocalStorage = () => {
+    localStorage.getItem(USER);
+}
+
+const getUserCredentialFromLocalStorage = () => {
+    localStorage.getItem(USER_CREDENTIAL);
+}
 
 export default {
     loginWithGoogle,
+    loginWithFacebook,
     setUserInLocalStorage,
-    loginWithFacebook
+    deleteUserFromLocalStorage,
+    getUserFromLocalStorage,
+    getUserCredentialFromLocalStorage
 }
