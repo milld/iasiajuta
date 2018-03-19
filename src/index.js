@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Switch, Link, BrowserRouter } from 'react-router-dom';
 import { messaging } from './firebase';
-import Login from './js/views/Login/index';
+import Login from './js/views/Login/Login';
 import Oportunitati from './js/views/Oportunitati/Oportunitati';
 import Header from './js/components/Header/Header';
 import './index.css';

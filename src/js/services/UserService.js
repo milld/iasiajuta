@@ -1,4 +1,4 @@
-import { auth, googleAuthProvider, facebookAuthProvider } from '../../../firebase';
+import { auth, googleAuthProvider, facebookAuthProvider } from '../../firebase';
 
 const USER = 'user';
 const USER_CREDENTIAL = 'userCredential';
@@ -19,6 +19,14 @@ const loginWithFacebook = () => new Promise((resolve, reject) => {
         .catch((err) => {
             reject(err);
         });
+})
+
+const logout = () => new Promise((resolve, reject) => {
+    auth.signOut().then(function () {
+        resolve();
+    }).catch(function (err) {
+        reject(err)
+    });
 })
 
 const setUserInLocalStorage = (user, credential) => {
@@ -42,6 +50,7 @@ const getUserCredentialFromLocalStorage = () => {
 export default {
     loginWithGoogle,
     loginWithFacebook,
+    logout,
     setUserInLocalStorage,
     deleteUserFromLocalStorage,
     getUserFromLocalStorage,
