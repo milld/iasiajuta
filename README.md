@@ -1,5 +1,5 @@
 # IașiAjută
-### Platformă pentru voluntariat open-source
+### Platformă pentru voluntariat open source
 ### Fondatori: Milld (Ștefan Moraru și Emilian Damian)
 
 #### Detaliile ultimului build
