@@ -18,7 +18,7 @@ class Login extends React.Component {
     }
 
     loginWithFacebook() {
-        UserService.loginWithFacebook.then((response) => {
+        UserService.loginWithFacebook().then((response) => {
             console.log(response);
             //UserService.setUserInLocalStorage(user, credential);
         })

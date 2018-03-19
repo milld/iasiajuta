@@ -10,8 +10,8 @@ let loginWithGoogle = () => new Promise((resolve, reject) => {
 })
 
 const setUserInLocalStorage = (user, credential) => {
-    localStorage.setItem('user', user);
-    localStorage.setItem('userCredential', credential);
+    localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem('userCredential', JSON.stringify(credential));
 }
 
 let loginWithFacebook = () => new Promise((resolve, reject) => {
