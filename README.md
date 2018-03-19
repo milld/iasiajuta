@@ -1,12 +1,12 @@
 # IașiAjută
 ### Platformă pentru voluntariat open source
-### Fondatori: Milld (Ștefan Moraru și Emilian Damian)
-
-#### Detaliile ultimului build
 
 [![Build Status](https://travis-ci.org/milld/iasiajuta.svg?branch=master)](https://travis-ci.org/milld/iasiajuta)
+[![Known Vulnerabilities](https://snyk.io/test/github/milld/iasiajuta/badge.svg)](https://snyk.io/test/github/milld/iasiajuta)
 
-<a href="https://snyk.io/test/github/milld/iasiajuta"><img src="https://snyk.io/test/github/milld/iasiajuta/badge.svg" alt="Known Vulnerabilities" data-canonical-src="https://snyk.io/test/github/milld/iasiajuta" style="max-width:100%;"/></a>
+### Fondatori
+
+**Milld (Ștefan Moraru și Emilian Damian)**
 
 #### Open Source & Free
 
