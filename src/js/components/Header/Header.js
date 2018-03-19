@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import ProfileImage from '../Image/ProfileImage';
+import UserService from '../../services/UserService';
 
 class Header extends Component {
   state = {
@@ -35,10 +36,25 @@ class Header extends Component {
     ));
   }
 
+  logout() {
+    UserService.logout().then(() => {
+      UserService.deleteUserFromLocalStorage();
+    })
+    .catch((err) => {
+      // TODO: handle error
+    });
+  }
+
+  generateLogoutButton() {
+    return <a href='/' onClick = { this.logout.bind(this) }>Logout</a>
+  }
+
   render() {
+    const logoutButton = this.generateLogoutButton();
     const nav = !this.state.menuToggled ? null : (
       <nav>
         {this.renderRoutes({...this.props})}
+        {logoutButton}
       </nav>
     );
 
@@ -51,7 +67,6 @@ class Header extends Component {
     return (
       <header>
         {nav}
-
         <i className="fas fa-bars" onClick={this.toggleMenu.bind(this)}></i>
 
         <ProfileImage {...ProfileImageProps} />
@@ -63,8 +78,7 @@ class Header extends Component {
 Header.defaultProps = {
   routes: [
     { title: 'Acasă', path: '/' },
-    { title: 'Oportunități', path: '/oportunitati' },
-    { title: 'Logout', path: '/loogut' }
+    { title: 'Oportunități', path: '/oportunitati' }
   ]
 };
 
