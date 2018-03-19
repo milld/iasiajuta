@@ -1,6 +1,6 @@
-# IasiAjuta
-### Platforma pentru voluntariat open-source
-### Fondatori: Milld (Stefan Moraru si Emilian Damian)
+# IașiAjută
+### Platformă pentru voluntariat open-source
+### Fondatori: Milld (Ștefan Moraru și Emilian Damian)
 
 #### Detaliile ultimului build
 
@@ -10,11 +10,11 @@
 
 #### Open Source & Free
 
-IasiAjuta va fi Free si Open Source tot timpul
+IașiAjută este și va fi **Free** si **Open Source** tot timpul
 
-Cod sursa proiect: https://github.com/milld/iasiajuta
+Cod sursă proiect: https://github.com/milld/iasiajuta
 
-Document platforma / donatii: https://docs.google.com/spreadsheets/d/1FK-hN8_foDm0tToiuTyelfBD8AdOlDJZUchyyqOCspg/
+Document platformă / donații: https://docs.google.com/spreadsheets/d/1FK-hN8_foDm0tToiuTyelfBD8AdOlDJZUchyyqOCspg/
 
 #### Cine poate contribui?
 
