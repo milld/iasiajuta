@@ -1,6 +1,6 @@
 import { auth, googleAuthProvider, facebookAuthProvider } from '../../../firebase';
 
-let loginWithGoogle = () => new Promise((resolve, reject) => {
+const loginWithGoogle = () => new Promise((resolve, reject) => {
     auth.signInWithPopup(googleAuthProvider).then(({ user, credential}) => {
         resolve({ user, credential });
     })
@@ -14,7 +14,7 @@ const setUserInLocalStorage = (user, credential) => {
     localStorage.setItem('userCredential', JSON.stringify(credential));
 }
 
-let loginWithFacebook = () => new Promise((resolve, reject) => {
+const loginWithFacebook = () => new Promise((resolve, reject) => {
     auth.signInWithPopup(facebookAuthProvider).then((response) => {
         resolve(response);
     })

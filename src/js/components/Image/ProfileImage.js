@@ -7,7 +7,7 @@ class ProfileImage extends Component {
       backgroundImage: `url(${src})`
     };
 
-    const className = 'Image-imageContainer' + (half ? ' Image-half ' : '');
+    const className = 'Image-imageContainer Profile-imageContainer' + (half ? ' Image-half ' : '');
 
     const image = !src ? null : (
       <div className='Image ProfileImage'>
@@ -15,7 +15,7 @@ class ProfileImage extends Component {
       </div>
     );
 
-    return link ? <a href={link} target='_blank'>{image}</a> : image;
+    return link ? <a href={link}>{image}</a> : image;
   }
 
   render() {

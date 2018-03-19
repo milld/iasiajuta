@@ -1,0 +1,41 @@
+header {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 1;
+}
+
+header i {
+  cursor: pointer;
+  margin-right: 12px;
+  transition-duration: 0.4s;
+  color: #2eec71;
+}
+
+header i:hover {
+  transform: rotate(180deg);
+}
+
+header .ProfileImage {
+}
+
+header .ProfileImage:hover > .Profile-imageContainer {
+  box-shadow: 0 0 1px 1px #2eec71;
+}
+
+header nav {
+  margin-right: 12px;
+  margin-left: 8px;
+}
+
+header nav a {
+  font-weight: 700;
+  color: #2eec71;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-left: 8px;
+  transition-duration: 0.2s;
+}

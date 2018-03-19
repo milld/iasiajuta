@@ -8,18 +8,18 @@ class BigImage extends Component {
     };
 
     const className = 'Image-imageContainer' + (half ? ' Image-half ' : '');
-
-    const image = !src ? null : (
-      <div className='Image'>
-        <div className={className} style={style}></div>
-      </div>
-    );
+    const image = !src ? null : <div className={className} style={style}></div>;
 
     return link ? <a href={link} target='_blank'>{image}</a> : image;
   }
 
   render() {
-    return this.renderImage({...this.props});
+    return (
+      <div className='BigImage'>
+        {this.props.children}
+        {this.renderImage({...this.props})}
+      </div>
+    );
   };
 }
 
