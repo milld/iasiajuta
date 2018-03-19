@@ -131,6 +131,8 @@ class App extends Component {
   }
 
   render() {
+    return null;
+
     return <Oportunitati />;
 
     return (

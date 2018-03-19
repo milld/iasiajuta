@@ -6,7 +6,7 @@ class Title extends Component {
     return (
       <div>
         <h1 className='Title'>{this.props.content}</h1>
-        <h1 className='Title'>{this.props.subtitle}</h1>
+        <h2 className='Title'>{this.props.subtitle}</h2>
       </div>
     );
   };

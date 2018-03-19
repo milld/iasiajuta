@@ -1,29 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, Switch, Link, BrowserRouter } from 'react-router-dom';
-import App from './App';
-import Login from './js/views/Login/index';
-import './index.css';
-
 import { messaging } from './firebase';
+import Login from './js/views/Login/index';
+import Oportunitati from './js/views/Oportunitati/Oportunitati';
+import Header from './js/components/Header/Header';
+import './index.css';
 
 const Main = () => (
   <main>
     <Switch>
-      <Route exact path='/' component={App} />
-      <Route path='/login' component={Login} />
+      <Route exact path='/' component={Login} />
+      <Route path='/oportunitati' component={Oportunitati} />
     </Switch>
   </main>
-);
-
-const Header = () => (
-  <header>
-    <nav>
-      <ul>
-        <li><Link to='/'>Home</Link></li>
-      </ul>
-    </nav>
-  </header>
 );
 
 const Application = () => (
