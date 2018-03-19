@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "firebase": "^3.8.0",
+    "firebase-admin": "^5.11.0",
+    "firebase-functions": "^0.8.2",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-file-input": "^0.2.5",
@@ -16,6 +18,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && firebase deploy --project iasiajuta-c3a12"
   }
 }

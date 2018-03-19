@@ -1,8 +1,22 @@
 language: node_js
 node_js:
-  - "9"
+- '9'
 sudo: false
 
+before_script:
+- npm test
+
 install:
-  - npm install
-  - npm run build
+- npm install
+
+script:
+- npm run build
+
+deploy:
+  provider: firebase
+  token:
+    secure: env.global.secure
+
+env:
+  global:
+    secure: OBjM3mTqx9TBNkdQOZmiO2Xo/y61j1XjPyWvzX6gaLlIz+b/MQxD8sy36mTbLXgYlUQieF2GuB8UKS5hyZw4LOqhu/ESc/8vu06L7FKdrBf1l2sYtmM5ETgneKU/cwggsi+If7UYlkAF4Kwtg0vpj01Yf7+ol+s5jvdle/r2XKgT0IunGNVDTQNtg41PwZKX1AQHWpHvNTPzKXkNY0vaQUn6q0B1AvGfhCJyW0TS984rWTvoFt6SVRASGexg1xbW9/IynB5VNuw6RaoZsdYlSroFR1aFSKrVXMEP3ninE/H4rojvkCD8FAI2UfyPers4/AQxnhrrvy4ckMliFeawBG0sAYZgcS1V67FeklUgmNg8pm7v49Uc1Nc5V2EcWGAFhUIEkJeoMj/NmHczku2fciIb/oNw07lAb7CMMAUJy/MWzkqvnMo+Ba0PzADF+2X8jmDNHoKUg/Zj2rax5AQvfR4fWchA6tw2QeTbSNNmRek95zr1hbYTdwV+Vu2mxI8rmUS+kkOmTi4v1mNif41OX9tXzMiLvcLuoY2QzpumCiY3a6wYC3ul+G4pIQdNmrK0y0dQ757gf+k6xcS7J2x6C6huZdg4hIVV/k7x+3hqFZXP7lCPMd1yN3sULW0VcYMWnrFSHkfbQWakRG+TplN7m9nnJ6EVxwuwEh3FvWdp80g=
