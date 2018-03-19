@@ -6,3 +6,23 @@
   padding-bottom: 12px;
   text-align: center;
 }
+
+.Oportunitati .Search {
+  margin-bottom: 6px;
+}
+
+.Oportunitati-SearchBar {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Oportunitati-SearchBar .Search input {
+  width: auto;
+  width: 400px;
+}
+
+.Oportunitati-SearchBar .Button {
+  width: auto;
+  width: 90px;
+}

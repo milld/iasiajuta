@@ -13,8 +13,9 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center center;
+  background-position: bottom center;
   z-index: -1;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.4);
 }
 
 .Image-imageContainer:before {
@@ -30,7 +31,7 @@
 }
 
 .Image-half {
-  max-height: 60vh;
+  max-height: 70vh;
   min-height: 400px;
 }
 
@@ -53,7 +54,7 @@
 .BigImage {
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
   flex-direction: column;
 }
 

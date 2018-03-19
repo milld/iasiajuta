@@ -1,10 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import Opportunity from '../Opportunity/Opportunity';
+import './Opportunities.css';
 
 class Opportunities extends Component {
   render() {
     return (
-      <div>
+      <div className='Opportunities'>
         <Opportunity />
         <Opportunity />
         <Opportunity />
