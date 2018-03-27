@@ -2,8 +2,8 @@
   width: 500px;
   height: 180px;
   background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.4);
+  border-radius: 4px;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
   position: relative;
   margin-top: 12px;
   display: flex;

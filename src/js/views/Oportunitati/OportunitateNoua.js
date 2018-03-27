@@ -7,7 +7,7 @@ import ProfileImage from '../../components/Image/ProfileImage';
 import OpportunityProgress from '../../components/Opportunity/OpportunityProgress';
 import './Oportunitati.css';
 
-class OportunitateExistenta extends Component {
+class OportunitateNoua extends Component {
   renderDescription({description}) {
     return (
       <span>{description}</span>
@@ -29,12 +29,12 @@ class OportunitateExistenta extends Component {
   }
 }
 
-OportunitateExistenta.defaultProps = {
+OportunitateNoua.defaultProps = {
   description: null
 };
 
-OportunitateExistenta.PropTypes = {
+OportunitateNoua.PropTypes = {
   description: PropTypes.string
 };
 
-export default OportunitateExistenta;
+export default OportunitateNoua;

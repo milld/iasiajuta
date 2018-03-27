@@ -62,7 +62,6 @@ class Header extends Component {
 
 Header.defaultProps = {
   routes: [
-    { title: 'Acasă', path: '/' },
     { title: 'Oportunități', path: '/oportunitati' },
     { title: 'Logout', path: '/loogut' }
   ]

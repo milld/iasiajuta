@@ -13,17 +13,17 @@ class OportunitateExistenta extends Component {
   renderOportunitati({ backgroundImage, title, subtitle, profileImage, description, buttonText }) {
     return (
       <div className='Oportunitati'>
-        <BigImage src={backgroundImage} alt={title} small={true}>
+        <BigImage src={backgroundImage} alt={title} half={true}>
           <Title content={title} subtitle={subtitle} />
 
           <ProfileImage big={true} src={profileImage} alt={subtitle} />
+
+          <span>{description}</span>
+
+          <OpportunityProgress opportunity={1} />
+
+          <Button link="/oportunitati/123/aplica" content={buttonText} />
         </BigImage>
-
-        <span>{description}</span>
-
-        <OpportunityProgress opportunity={1} />
-
-        <Button link="/oportunitati/123/aplica" content={buttonText} />
         <Footer />
       </div>
     );

@@ -1,12 +1,13 @@
 .Button {
   width: 500px;
   height: 40px;
-  background-color: #2eec71;
-  border-radius: 5px;
+  background-color: #2ecc71;
+  border-radius: 4px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .Button a {
