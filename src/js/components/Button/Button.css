@@ -10,7 +10,7 @@
   cursor: pointer;
 }
 
-.Button a {
+.ButtonContainer a {
   text-decoration: none;
   color: white;
   font-weight: 700;

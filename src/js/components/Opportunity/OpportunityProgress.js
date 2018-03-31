@@ -13,7 +13,7 @@ OpportunityProgress.defaultProps = {
 };
 
 OpportunityProgress.PropTypes = {
-
+  progress: PropTypes.number
 };
 
 export default OpportunityProgress;

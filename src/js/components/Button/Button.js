@@ -5,9 +5,11 @@ import './Button.css';
 class Button extends Component {
   renderButton({ link, content }) {
     return (
-      <div className='Button'>
+      <div className='ButtonContainer'>
         <Link to={link}>
-          <span>{content}</span>
+          <div className='Button'>
+              <span>{content}</span>
+          </div>
         </Link>
       </div>
     );

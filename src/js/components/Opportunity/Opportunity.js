@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import Title from '../Title/Title';
 import Button from '../Button/Button';
 import './Opportunity.css';
 
@@ -20,8 +19,8 @@ class Opportunity extends Component {
     return <span className='Opportunity-Description'>{description}</span>;
   }
 
-  renderLogo({logo}) {
-    return <img className='Opportunity-Logo' src={logo} />;
+  renderLogo({logo, title}) {
+    return <img className='Opportunity-Logo' src={logo} alt={title} />;
   }
 
   renderButton({button}) {
@@ -58,6 +57,7 @@ Opportunity.defaultProps = {
 };
 
 Opportunity.PropTypes = {
+  title: PropTypes.string
 };
 
 export default Opportunity;
