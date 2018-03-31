@@ -8,7 +8,7 @@ import Button from '../../components/Button/Button';
 import './Oportunitati.css';
 
 class Oportunitati extends Component {
-  renderHomepage({ backgroundImage, title }) {
+  renderOportunitati({ backgroundImage, title }) {
     return (
       <div className='Oportunitati'>
         <BigImage src={backgroundImage} alt={title} half={true}>
@@ -27,7 +27,7 @@ class Oportunitati extends Component {
   }
 
   render() {
-    return this.renderHomepage({...this.props});
+    return this.renderOportunitati({...this.props});
   };
 }
 

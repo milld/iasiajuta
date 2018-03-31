@@ -2,15 +2,20 @@ import React, { Component, PropTypes } from 'react';
 import './Image.css';
 
 class ProfileImage extends Component {
-  renderImage({ src, alt, link, half }) {
+  renderImage({ src, alt, link, half, big }) {
     const style = {
       backgroundImage: `url(${src})`
     };
 
-    const className = 'Image-imageContainer Profile-imageContainer' + (half ? ' Image-half ' : '');
+    const className = 'Profile-imageContainer'
+    + (half ? ' Image-half ' : '')
+    + (big ? ' Image-big ' : '');
+
+    const classNameImage = 'ProfileImage'
+    + (big ? ' Image-big ' : '');
 
     const image = !src ? null : (
-      <div className='Image ProfileImage'>
+      <div className={classNameImage}>
         <div className={className} style={style}></div>
       </div>
     );
@@ -26,13 +31,15 @@ class ProfileImage extends Component {
 ProfileImage.defaultProps = {
   src: null,
   alt: '',
-  link: null
+  link: null,
+  big: false
 };
 
 ProfileImage.PropTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
-  link: PropTypes.string
+  link: PropTypes.string,
+  big: PropTypes.bool
 };
 
 export default ProfileImage;

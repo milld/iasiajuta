@@ -1,13 +1,16 @@
 import React, { Component, PropTypes } from 'react';
+import { Link } from 'react-router-dom';
 import './Button.css';
 
 class Button extends Component {
   renderButton({ link, content }) {
     return (
-      <div className='Button'>
-        <a href={link}>
-          <span>{content}</span>
-        </a>
+      <div className='ButtonContainer'>
+        <Link to={link}>
+          <div className='Button'>
+              <span>{content}</span>
+          </div>
+        </Link>
       </div>
     );
   }
