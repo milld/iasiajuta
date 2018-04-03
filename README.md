@@ -4,6 +4,12 @@
 [![Build Status](https://travis-ci.org/milld/iasiajuta.svg?branch=master)](https://travis-ci.org/milld/iasiajuta)
 [![Known Vulnerabilities](https://snyk.io/test/github/milld/iasiajuta/badge.svg)](https://snyk.io/test/github/milld/iasiajuta)
 
+### Documentatie setup local
+```
+npm install
+npm run start
+```
+
 ### Fondatori
 
 **Milld (Ștefan Moraru și Emilian Damian)**
