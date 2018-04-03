@@ -46,7 +46,8 @@ class Header extends Component {
   }
 
   generateLogoutButton() {
-    return <a href='/logout' onClick={ this.logout.bind(this) }>Logout</a>
+    //TODO: check if user is logged in
+    return <a href='/' onClick={ this.logout.bind(this) }>Logout</a>
   }
 
   render() {
