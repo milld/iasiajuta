@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import './Search.css';
 
 class Search extends Component {
@@ -23,9 +23,6 @@ class Search extends Component {
 Search.defaultProps = {
   icon: 'fas fa-search',
   placeholder: 'Organizatie, Nume, Eveniment, Locatie, Data'
-};
-
-Search.PropTypes = {
 };
 
 export default Search;
