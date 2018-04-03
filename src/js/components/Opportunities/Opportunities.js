@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import Opportunity from '../Opportunity/Opportunity';
 import './Opportunities.css';
 
@@ -16,9 +16,6 @@ class Opportunities extends Component {
 }
 
 Opportunities.defaultProps = {
-};
-
-Opportunities.PropTypes = {
 };
 
 export default Opportunities;

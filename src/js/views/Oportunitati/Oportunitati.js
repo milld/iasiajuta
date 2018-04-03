@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import BigImage from '../../components/Image/BigImage';
 import Title from '../../components/Title/Title';
 import Search from '../../components/Search/Search';
@@ -36,7 +36,5 @@ Oportunitati.defaultProps = {
   title: 'IașiAjută'
 };
 
-Oportunitati.PropTypes = {
-};
 
 export default Oportunitati;

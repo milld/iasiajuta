@@ -46,7 +46,7 @@ class Header extends Component {
   }
 
   generateLogoutButton() {
-    return <a href='/' onClick = { this.logout.bind(this) }>Logout</a>
+    return <a href='/logout' onClick={ this.logout.bind(this) }>Logout</a>
   }
 
   render() {
@@ -78,7 +78,6 @@ class Header extends Component {
 Header.defaultProps = {
   routes: [
     { title: 'Oportunități', path: '/oportunitati' },
-    { title: 'Logout', path: '/loogut' }
   ]
 };
 
