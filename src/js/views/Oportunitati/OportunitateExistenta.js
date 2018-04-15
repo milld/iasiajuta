@@ -18,16 +18,19 @@ class OportunitateExistenta extends Component {
         </BigImage>
 
         <div className='Oportunitati-Content-Container'>
-        <div className='Oportunitati-Content'>
-          <p>{description}</p>
-          <p><i className="far fa-calendar-alt" /> {date}</p>
-          <p><i className="far fa-clock" /> {duration} de minute</p>
+          <div className='Oportunitati-Content'>
+            <p>{description}</p>
+            <p><i className="far fa-calendar-alt" /> {date}</p>
+            <p><i className="far fa-clock" /> {duration} de minute</p>
 
-          <OpportunityProgress opportunity={1} progress={progress} />
+            <OpportunityProgress opportunity={1} progress={progress} />
 
-          <Button link="/oportunitati/123/aplica" content={buttonText} />
+            <div>
+              <Button link="/oportunitati/123/aplica" content={buttonText} />
+            </div>
+          </div>
         </div>
-        </div>
+
         <Footer />
       </div>
     );

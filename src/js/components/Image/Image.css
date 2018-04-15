@@ -60,9 +60,10 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-size: cover;
+  background-size: 100%;
+  background-color: #2ecc71;
   background-repeat: no-repeat;
-  background-position: bottom center;
+  background-position: center center;
   z-index: -1;
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.4);
   background-attachment: initial;
