@@ -25,6 +25,8 @@ npm install
 npm start
 ```
 
+Aceste 2 comenzi vor porni un server local. Puteti accesa aplicatia la adresa http://localhost:3000/. Modificarile din cod vor aparea in timp real (hot reloading).
+
 ### Fondatori
 
 **Milld (Ștefan Moraru și Emilian Damian)**
