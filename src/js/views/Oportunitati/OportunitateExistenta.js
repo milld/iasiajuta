@@ -23,6 +23,8 @@ class OportunitateExistenta extends Component {
             <p><i className="far fa-calendar-alt" /> {date}</p>
             <p><i className="far fa-clock" /> {duration} de minute</p>
 
+            <h1>TODO -- TYPEFORM -- TODO --</h1>
+
             <OpportunityProgress opportunity={1} progress={progress} />
 
             <div>

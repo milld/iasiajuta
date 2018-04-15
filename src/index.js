@@ -5,7 +5,6 @@ import { messaging } from './firebase';
 import Login from './js/views/Login/Login';
 import Oportunitati from './js/views/Oportunitati/Oportunitati';
 import OportunitateExistenta from './js/views/Oportunitati/OportunitateExistenta';
-import OportunitateAplica from './js/views/Oportunitati/OportunitateAplica';
 import Header from './js/components/Header/Header';
 import './index.css';
 
@@ -15,7 +14,6 @@ const Main = () => (
       <Route exact path='/' component={Login} />
       <Route exact path='/oportunitati' component={Oportunitati} />
       <Route exact path='/oportunitati/:id' component={OportunitateExistenta} />
-      <Route exact path='/oportunitati/:id/aplica' component={OportunitateAplica} />
     </Switch>
   </main>
 );

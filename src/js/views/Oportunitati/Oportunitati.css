@@ -49,3 +49,13 @@
   width: auto;
   width: 90px;
 }
+
+.Oportunitati-Description {
+  background-color: #e67e22;
+  color: white;
+  padding: 20px;
+  width: 500px;
+  margin-bottom: 20px;
+  padding-top: 120px;
+  margin-top: -100px;
+}

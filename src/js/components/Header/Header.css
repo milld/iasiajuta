@@ -5,7 +5,11 @@ header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  z-index: 1;
+  z-index: 3;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 30px;
+  padding: 2px;
+  padding-top: 3px;
 }
 
 header .ProfileImage {
@@ -20,14 +24,43 @@ header nav {
   margin-left: 8px;
 }
 
-header nav a:hover {
-  color: white;
-}
-
 header nav a {
   font-weight: 700;
   color: #2ecc71;
   text-decoration: none;
   margin-left: 8px;
   transition-duration: 0.4s;
+}
+
+header nav a:hover {
+  transform: rotate(5deg);
+}
+
+header nav a:first-child:hover {
+  transform: rotate(-5deg);
+ }
+
+ header nav a {
+  font-weight: 700;
+  color: #2ecc71;
+  text-decoration: none;
+  margin-left: 8px;
+  transition-duration: 0.4s;
+  display: inline-block;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.BigImage {
+  transition-duration: 0.4s;
+}
+
+@media (max-width: 700px) {
+  .BigImage {
+    padding-top: 50px;
+  }
 }

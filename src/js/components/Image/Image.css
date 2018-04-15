@@ -18,7 +18,7 @@
   min-width: 1024px;
   /* Set up proportionate scaling */
   width: 100%;
-  height: auto;
+  height: 100%;
   /* Set up positioning */
   position: fixed;
   top: 0;
@@ -50,7 +50,7 @@
 }
 
 .Image-half {
-  max-height: 70vh;
+  max-height: 100vh;
   min-height: 400px;
 }
 
