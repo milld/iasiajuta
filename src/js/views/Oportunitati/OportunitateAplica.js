@@ -1,8 +1,6 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import BigImage from '../../components/Image/BigImage';
 import Title from '../../components/Title/Title';
-import Search from '../../components/Search/Search';
-import Opportunities from '../../components/Opportunities/Opportunities';
 import Footer from '../../components/Footer/Footer';
 import Button from '../../components/Button/Button';
 import ProfileImage from '../../components/Image/ProfileImage';
