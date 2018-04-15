@@ -5,59 +5,13 @@ import ProfileImage from '../Image/ProfileImage';
 import UserService from '../../services/UserService';
 
 class Header extends Component {
-  state = {
-    menuToggled: false,
-    resetTimeout: null
-  };
-
-  toggleMenu() {
-    this.setState({
-      menuToggled: !this.state.menuToggled
-    }, () => {
-      if (this.state.menuToggled) {
-        if (this.state.resetTimeout) {
-          clearTimeout(this.state.resetTimeout);
-        }
-
-        this.setState({
-          resetTimeout: setTimeout(() => {
-            this.setState({
-              menuToggled: false
-            });
-          }, 10000)
-        });
-      }
-    });
-  }
-
   renderRoutes({routes}) {
     return routes.map(route => (
-      <Link to={route.path}>{route.title}</Link>
+      <Link to={route.path} onClick={route.onClick ? route.onClick : () => {}}>{route.title}</Link>
     ));
   }
 
-  logout() {
-    UserService.logout().then(() => {
-      UserService.deleteUserFromLocalStorage();
-    })
-    .catch((err) => {
-      // TODO: handle error
-    });
-  }
-
-  generateLogoutButton() {
-    return <a href='/' onClick = { this.logout.bind(this) }>Logout</a>
-  }
-
   render() {
-    const logoutButton = this.generateLogoutButton();
-    const nav = !this.state.menuToggled ? null : (
-      <nav>
-        {this.renderRoutes({...this.props})}
-        {logoutButton}
-      </nav>
-    );
-
     const ProfileImageProps = {
       src: 'https://stefanmoraru.ro/assets/me.jpg',
       alt: 'Profilul tău',
@@ -66,8 +20,9 @@ class Header extends Component {
 
     return (
       <header>
-        {nav}
-        <i className="fas fa-bars" onClick={this.toggleMenu.bind(this)}></i>
+        <nav>
+          {this.renderRoutes({...this.props})}
+        </nav>
 
         <ProfileImage {...ProfileImageProps} />
       </header>
@@ -78,7 +33,14 @@ class Header extends Component {
 Header.defaultProps = {
   routes: [
     { title: 'Oportunități', path: '/oportunitati' },
-    { title: 'Logout', path: '/loogut' }
+    { title: 'Logout', path: '/logut', onClick: () => {
+      UserService.logout().then(() => {
+        UserService.deleteUserFromLocalStorage();
+      })
+      .catch((err) => {
+        // TODO: handle error
+      });
+    }}
   ]
 };
 
@@ -86,7 +48,8 @@ Header.propTypes = {
   routes: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
-      path: PropTypes.string.isRequired
+      path: PropTypes.string.isRequired,
+      onClick: PropTypes.function
     })
   )
 };

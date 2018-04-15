@@ -2,6 +2,17 @@
 
 }
 
+.Oportunitati-Content {
+  width: 500px;
+  text-align: center;
+}
+
+.Oportunitati-Content-Container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
 .Oportunitati .Title {
   padding-bottom: 12px;
   text-align: center;

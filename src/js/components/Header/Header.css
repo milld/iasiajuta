@@ -8,22 +8,11 @@ header {
   z-index: 1;
 }
 
-header i {
-  cursor: pointer;
-  margin-right: 12px;
-  transition-duration: 0.4s;
-  color: #2ecc71;
-}
-
-header i:hover {
-  transform: rotate(180deg);
-}
-
 header .ProfileImage {
 }
 
 header .ProfileImage:hover > .Profile-imageContainer {
-  box-shadow: 0 0 1px 1px #2ecc71;
+  border: 1px solid white;
 }
 
 header nav {
@@ -31,10 +20,14 @@ header nav {
   margin-left: 8px;
 }
 
+header nav a:hover {
+  color: white;
+}
+
 header nav a {
   font-weight: 700;
   color: #2ecc71;
   text-decoration: none;
   margin-left: 8px;
-  transition-duration: 0.2s;
+  transition-duration: 0.4s;
 }
