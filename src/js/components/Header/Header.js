@@ -11,8 +11,6 @@ class Header extends Component {
     ));
   }
 
-<<<<<<< HEAD
-=======
   logout() {
     UserService.logout().then(() => {
       UserService.deleteUserFromLocalStorage();
@@ -27,7 +25,6 @@ class Header extends Component {
     return <a href='/' onClick={ this.logout.bind(this) }>Logout</a>
   }
 
->>>>>>> 5d264b32536ffe12ae552fb44bcf115763fe6518
   render() {
     const ProfileImageProps = {
       src: 'https://stefanmoraru.ro/assets/me.jpg',
