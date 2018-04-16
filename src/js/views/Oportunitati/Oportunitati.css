@@ -8,10 +8,22 @@
   background-color: #2ecc71;
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
   color: white;
-  padding-top: 100px;
-  margin-top: -100px;
   padding: 20px;
-  padding-top: 100px;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.Oportunitati-Content img {
+  width: 40%;
+}
+
+.Oportunitati-Content .Button {
+  width: auto;
+}
+
+.Oportunitati-Content i {
+  padding-right: 8px;
 }
 
 .Oportunitati-Content-Container {

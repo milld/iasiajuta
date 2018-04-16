@@ -10,6 +10,7 @@ header {
   border-radius: 30px;
   padding: 2px;
   padding-top: 3px;
+  box-shadow: 0 0 1px 1px rgba(30, 30, 30, 0.2);
 }
 
 header .ProfileImage {

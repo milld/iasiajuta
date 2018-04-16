@@ -13,12 +13,12 @@ class OportunitateExistenta extends Component {
       <div className='Oportunitati'>
         <BigImage src={backgroundImage} alt={title} small={true}>
           <Title content={title} subtitle={subtitle} />
-
-          <ProfileImage big={true} src={profileImage} alt={subtitle} />
         </BigImage>
 
         <div className='Oportunitati-Content-Container'>
           <div className='Oportunitati-Content'>
+            <img src={profileImage} alt={subtitle} />
+
             <p>{description}</p>
             <p><i className="far fa-calendar-alt" /> {date}</p>
             <p><i className="far fa-clock" /> {duration} de minute</p>
@@ -45,9 +45,9 @@ class OportunitateExistenta extends Component {
 
 OportunitateExistenta.defaultProps = {
   backgroundImage: 'https://i.imgur.com/BZ4DPfR.jpg',
-  profileImage: 'https://www.paginademedia.ro/wp-content/uploads/2016/02/sigla_salvati_copiii_tb730.jpg',
+  profileImage: 'http://salvaticopiii.ro/en_/templates/gk_elvesocial/images/style1/logo.png',
   title: 'IașiAjută',
-  subtitle: 'Salvati Copiii',
+  subtitle: 'Voluntariat Auchan',
   description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
   buttonText: 'Inscrie-te',
   progress: 70,
