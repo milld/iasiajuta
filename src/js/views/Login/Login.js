@@ -1,8 +1,6 @@
 import React from 'react';
-import { auth, facebookAuthProvider, googleAuthProvider } from '../../../firebase';
 import UserService from '../../services/UserService';
 import BigImage from '../../components/Image/BigImage';
-import Center from '../../components/Center/Center';
 import Title from '../../components/Title/Title';
 import './Login.css';
 

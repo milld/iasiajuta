@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react';
-import Title from '../Title/Title';
 import Button from '../Button/Button';
 import './Opportunity.css';
 
@@ -20,12 +19,12 @@ class Opportunity extends Component {
     return <span className='Opportunity-Description'>{description}</span>;
   }
 
-  renderLogo({logo}) {
-    return <img className='Opportunity-Logo' src={logo} />;
+  renderLogo({logo, title}) {
+    return <img className='Opportunity-Logo' src={logo} alt={title} />;
   }
 
-  renderButton({button, buttonAction}) {
-    return <Button content={button} action={buttonAction} />;
+  renderButton({button}) {
+    return <Button content={button.content} link={button.link} />;
   }
 
   render() {
@@ -49,12 +48,16 @@ class Opportunity extends Component {
 Opportunity.defaultProps = {
   title: 'Heading',
   image: 'https://bucharest-marathon.com/wp-content/uploads/2016/09/Echipa-Salvati-Copiii-la-maraton-9-octombrie.jpg',
-  button: 'Ajută',
+  button: {
+    content: 'Ajută',
+    link: '/oportunitati/123'
+  },
   description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy',
   logo: 'http://www.protectiacopilului6.ro/thumb_500x500_1838-salvatii-copii.jpg'
 };
 
 Opportunity.PropTypes = {
+  title: PropTypes.string
 };
 
 export default Opportunity;

@@ -2,18 +2,35 @@
   position: relative;
   width: 100%;
   height: 100vh;
+  z-index: 2;
+}
+
+.ProfileImage {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  z-index: 2;
 }
 
 .Image-imageContainer {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+  /* Set up proportionate scaling */
   width: 100%;
   height: 100%;
-  position: absolute;
+  /* Set up positioning */
+  position: fixed;
   top: 0;
   left: 0;
+
   background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: bottom center;
+  background-position: center center;
   z-index: -1;
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.4);
 }
@@ -31,14 +48,25 @@
 }
 
 .Image-half {
-  max-height: 70vh;
+  max-height: 100vh;
   min-height: 400px;
 }
 
 .Profile-imageContainer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: 100%;
+  background-color: #2ecc71;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: -1;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.4);
   background-attachment: initial;
   border-radius: 100%;
-  border: 1px solid #2eec71;
+  border: 1px solid #2ecc71;
   margin-top: -2px;
 }
 
@@ -49,6 +77,18 @@
 .ProfileImage {
   width: 40px;
   height: 40px;
+}
+
+.Image-small {
+  max-height: 40vh;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  box-sizing: content-box;
+}
+
+.Image-big {
+  width: 180px;
+  height: 180px;
 }
 
 .BigImage {
