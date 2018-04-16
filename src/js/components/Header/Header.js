@@ -45,29 +45,45 @@ class Header extends Component {
     });
   }
 
+  getLoggedInUser() {
+    return UserService.getUserFromLocalStorage();
+  }
+
   generateLogoutButton() {
     return <a href='/' onClick = { this.logout.bind(this) }>Logout</a>
   }
 
-  render() {
+  generateNav() {
     const logoutButton = this.generateLogoutButton();
-    const nav = !this.state.menuToggled ? null : (
+    return !this.state.menuToggled ? null : (
       <nav>
-        {this.renderRoutes({...this.props})}
+        {this.renderRoutes({ ...this.props })}
         {logoutButton}
       </nav>
     );
+  }
+
+  render() {
+
+    const user = this.getLoggedInUser();
+    console.log('loggedInUser: ', user);
+
+    if(!user) {
+      return null;
+    }
+
+    const nav = this.generateNav();
 
     const ProfileImageProps = {
-      src: 'https://stefanmoraru.ro/assets/me.jpg',
+      src: user.photoURL,
       alt: 'Profilul tău',
-      link: '/profil'
+      link: '/profil/' + user.uid 
     };
 
     return (
       <header>
         {nav}
-        <i className="fas fa-bars" onClick={this.toggleMenu.bind(this)}></i>
+        < i className="fas fa-bars" onClick={this.toggleMenu.bind(this)} ></i >
 
         <ProfileImage {...ProfileImageProps} />
       </header>
