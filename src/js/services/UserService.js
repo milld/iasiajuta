@@ -40,11 +40,15 @@ const deleteUserFromLocalStorage = () => {
 }
 
 const getUserFromLocalStorage = () => {
-    localStorage.getItem(USER);
+    return localStorage.getItem(USER);
 }
 
 const getUserCredentialFromLocalStorage = () => {
-    localStorage.getItem(USER_CREDENTIAL);
+    return localStorage.getItem(USER_CREDENTIAL);
+}
+
+const isUserAuthenticated = () => {
+    return localStorage.getItem(USER) ? true : false;
 }
 
 export default {
@@ -54,5 +58,6 @@ export default {
     setUserInLocalStorage,
     deleteUserFromLocalStorage,
     getUserFromLocalStorage,
-    getUserCredentialFromLocalStorage
+    getUserCredentialFromLocalStorage,
+    isUserAuthenticated
 }

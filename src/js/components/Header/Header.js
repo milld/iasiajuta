@@ -20,24 +20,45 @@ class Header extends Component {
     });
   }
 
+  getLoggedInUser() {
+    return UserService.getUserFromLocalStorage();
+  }
+
   generateLogoutButton() {
     //TODO: check if user is logged in
     return <a href='/' onClick={ this.logout.bind(this) }>Logout</a>
   }
 
+  generateNav() {
+    const logoutButton = this.generateLogoutButton();
+    return (
+      <nav>
+        {this.renderRoutes({ ...this.props })}
+        {logoutButton}
+      </nav>
+    );
+  }
+
   render() {
+
+    const user = this.getLoggedInUser();
+    console.log('loggedInUser: ', user);
+
+    if(!user) {
+      return null;
+    }
+
+    const nav = this.generateNav();
+
     const ProfileImageProps = {
-      src: 'https://stefanmoraru.ro/assets/me.jpg',
+      src: user.photoURL,
       alt: 'Profilul tău',
-      link: '/profil'
+      link: '/profil/' + user.uid 
     };
 
     return (
       <header>
-        <nav>
-          {this.renderRoutes({...this.props})}
-        </nav>
-
+        {nav}
         <ProfileImage {...ProfileImageProps} />
       </header>
     );
