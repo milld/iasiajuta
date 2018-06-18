@@ -28,7 +28,7 @@ class OportunitateExistenta extends Component {
             <OpportunityProgress opportunity={1} progress={progress} />
 
             <div>
-              <Button link="/oportunitati/123/aplica" content={buttonText} />
+              <Button content={buttonText} />
             </div>
           </div>
         </div>
@@ -49,7 +49,7 @@ OportunitateExistenta.defaultProps = {
   title: 'IașiAjută',
   subtitle: 'Voluntariat Auchan',
   description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
-  buttonText: 'Inscrie-te',
+  buttonText: 'Ajută',
   progress: 70,
   date: 'Sat Mar 31 2018 23:54:45 GMT+0300 (EEST)',
   duration: 120

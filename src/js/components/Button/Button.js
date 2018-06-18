@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import './Button.css';
 
 class Button extends Component {
-  renderButton({ link, content }) {
+  renderButton({ link, content, onClick }) {
     return (
-      <div className='ButtonContainer'>
+      <div className='ButtonContainer' onClick={onClick}>
         <Link to={link}>
           <div className='Button'>
-              <span>{content}</span>
+              <span className='ButtonContent'>{content}</span>
           </div>
         </Link>
       </div>
@@ -22,12 +22,15 @@ class Button extends Component {
 
 Button.defaultProps = {
   link: '',
-  content: ''
+  content: '',
+  onClick: () => {
+  }
 };
 
 Button.PropTypes = {
   link: PropTypes.string,
-  content: PropTypes.string
+  content: PropTypes.string,
+  onClick: PropTypes.function
 };
 
 export default Button;

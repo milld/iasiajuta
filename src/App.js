@@ -1,21 +1,10 @@
 import React, { Component } from 'react';
 import { database, auth, googleAuthProvider, storage } from './firebase';
 import registerMessaging from './request-messaging-permission';
-
 import FileInput from 'react-file-input';
-
 import reactLogo from './react-logo.svg';
 import firebaseLogo from './firebase-logo.svg';
 import './App.css';
-
-/// TEST
-import BigImage from './js/components/Image/BigImage';
-import Oportunitati from './js/views/Oportunitati/Oportunitati';
-import Despre from './js/views/Despre/Despre';
-import OportunitateExistenta from './js/views/Oportunitati/OportunitateExistenta';
-import OportunitateNoua from './js/views/Oportunitati/OportunitateNoua';
-import Profil from './js/views/Profil/Profil';
-/// /TEST
 
 class App extends Component {
   constructor(props) {
@@ -26,7 +15,7 @@ class App extends Component {
       newData: '',
       currentUser: {},
       userImages: null
-    }
+    };
 
     this.userRef = database.ref('/users').child('Anonymous');
     this.guidesRef = database.ref('/guides');
@@ -131,35 +120,10 @@ class App extends Component {
   }
 
   render() {
-    return null;
-
-    return <Oportunitati />;
-
     return (
-      <div>
-        <h1>------------------------------------------- TEST</h1>
-        <OportunitateExistenta />
-        <h1>------------------------------------------- TEST</h1>
-        <Despre />
-        <h1>------------------------------------------- TEST</h1>
-        <Oportunitati />
-        <h1>------------------------------------------- TEST</h1>
-        <Profil />
-        <h1>------------------------------------------- TEST</h1>
-        <OportunitateNoua />
-        <h1>------------------------------------------- TEST</h1>
-        <h1>------------------------------------------- TEST</h1>
-        <h1>------------------------------------------- TEST</h1>
-        <h1>------------------------------------------- TEST</h1>
-        <h1>------------------------------------------- TEST</h1>
-      </div>
-    );
-
-    return (
+    <div>
+      <Oportunitati />;
       <div className="App">
-        <h1>TEST</h1>
-        <BigImage src="https://cvhf.org.uk/wp-content/uploads/2015/11/volunteering-1400x630.jpg?x35849" alt="IasiAjuta" />
-        <h1>/TEST</h1>
         <div className="App-nav">
           <span className="App-nav-title">React + Firebase Setup</span>
           <span className="App-nav-button">{this.state.currentUser.email ? this.displayCurrentUser() : <a href="#" onClick={this.signIn}>Sign In</a>}</span>
@@ -196,6 +160,7 @@ class App extends Component {
             {this.displayUserImages()}
           </div>
         </div>
+      </div>
       </div>
     );
   }

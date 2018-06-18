@@ -8,6 +8,32 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  position: relative;
+  transition-duration: 0.4s;
+}
+
+.Button::after {
+  content: '';
+  display: block;
+  background-color: rgb(23, 214, 103);
+  opacity: 1;
+  border-radius: 4px;
+  width: 0;
+  height: 100%;
+  transition-duration: 0.4s;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.ButtonContent {
+  position: relative;
+  z-index: 2;
+}
+
+.Button:hover:after {
+  width: 100%;
 }
 
 .ButtonContainer a {

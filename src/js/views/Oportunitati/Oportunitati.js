@@ -15,8 +15,8 @@ class Oportunitati extends Component {
           <Title content={title} subtitle='Ajutăm voluntariatul impreună' />
 
           <div className='Oportunitati-SearchBar'>
-            <Search />
-            <Button link="/oportunitati/nou" content="Adaugă" />
+            <Search options={this.props.searchOptions} onChange={this.props.searchChange} />
+            <Button link="/oportunitati/nou" content="Contribuie" />
           </div>
 
           <Opportunities />
@@ -33,7 +33,11 @@ class Oportunitati extends Component {
 
 Oportunitati.defaultProps = {
   backgroundImage: 'https://i.imgur.com/BZ4DPfR.jpg',
-  title: 'IașiAjută'
+  title: 'IașiAjută',
+  searchOptions: [ 'test' ],
+  searchChange: () => {
+
+  }
 };
 
 

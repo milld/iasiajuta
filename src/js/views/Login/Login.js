@@ -2,6 +2,8 @@ import React from 'react';
 import UserService from '../../services/UserService';
 import BigImage from '../../components/Image/BigImage';
 import Title from '../../components/Title/Title';
+import Button from '../../components/Button/Button'
+import Footer from '../../components/Footer/Footer';
 import './Login.css';
 
 class Login extends React.Component {
@@ -35,14 +37,6 @@ class Login extends React.Component {
         });
     }
 
-    renderFacebookButton() {
-        return <img className='LoginButton' onClick={ this.loginWithFacebook.bind(this) } src='http://www.calgarycounsellors.com/wp-content/uploads/2017/01/facebook-button-connect.png' alt='Login with Facebook' />;
-    }
-
-    renderGoogleButton() {
-        return <img className='LoginButton' onClick={ this.loginWithGoogle.bind(this) } src='/login_google.png' alt='Login with Google' />;
-    }
-
     render() {
         return (
             <section className='Login'>
@@ -50,11 +44,14 @@ class Login extends React.Component {
                     <Title content='IașiAjută' subtitle='Drumul spre voluntariat' />
 
                     <div className='LoginButtons'>
-                        {this.renderFacebookButton()}
-                        {this.renderGoogleButton()}
+                        <Button content={'Autentifică-te cu Facebook'} onClick={ this.loginWithFacebook.bind(this) } />
+                        <Button content={'Autentifică-te cu Google'} onClick={ this.loginWithGoogle.bind(this) } />
                     </div>
+
                     {this.state.error}
                 </BigImage>
+
+                <Footer />
             </section>
         );
     }

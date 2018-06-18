@@ -10,42 +10,48 @@ const loginWithGoogle = () => new Promise((resolve, reject) => {
     .catch((err) => {
         reject(err);
     });
-})
+});
 
 const loginWithFacebook = () => new Promise((resolve, reject) => {
     auth.signInWithPopup(facebookAuthProvider).then(({ user, credential }) => {
         resolve({ user, credential });
     })
-        .catch((err) => {
-            reject(err);
-        });
-})
-
-const logout = () => new Promise((resolve, reject) => {
-    auth.signOut().then(function () {
-        resolve();
-    }).catch(function (err) {
-        reject(err)
+    .catch((err) => {
+        reject(err);
     });
-})
+});
 
 const setUserInLocalStorage = (user, credential) => {
     localStorage.setItem(USER, JSON.stringify(user));
     localStorage.setItem(USER_CREDENTIAL, JSON.stringify(credential));
-}
+};
 
 const deleteUserFromLocalStorage = () => {
     localStorage.removeItem(USER);
     localStorage.removeItem(USER_CREDENTIAL);
-}
+};
 
 const getUserFromLocalStorage = () => {
     localStorage.getItem(USER);
-}
+};
 
 const getUserCredentialFromLocalStorage = () => {
     localStorage.getItem(USER_CREDENTIAL);
-}
+};
+
+const logout = () => new Promise((resolve, reject) => {
+    auth.signOut().then(function () {
+        deleteUserFromLocalStorage();
+        resolve();
+    }).catch(function (err) {
+        deleteUserFromLocalStorage();
+        reject(err)
+    });
+});
+
+const isLoggedIn = () => {
+    return true;
+};
 
 export default {
     loginWithGoogle,
@@ -54,5 +60,6 @@ export default {
     setUserInLocalStorage,
     deleteUserFromLocalStorage,
     getUserFromLocalStorage,
-    getUserCredentialFromLocalStorage
+    getUserCredentialFromLocalStorage,
+    isLoggedIn
 }

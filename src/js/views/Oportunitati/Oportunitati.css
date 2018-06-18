@@ -4,7 +4,6 @@
 
 .Oportunitati-Content {
   width: 500px;
-  text-align: center;
   background-color: #2ecc71;
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
   color: white;
@@ -53,13 +52,11 @@
 }
 
 .Oportunitati-SearchBar .Search input {
-  width: auto;
-  width: 400px;
+  width: 370px;
 }
 
 .Oportunitati-SearchBar .Button {
-  width: auto;
-  width: 90px;
+  width: 120px;
 }
 
 .Oportunitati-Description {

@@ -5,40 +5,56 @@ import ProfileImage from '../Image/ProfileImage';
 import UserService from '../../services/UserService';
 
 class Header extends Component {
-  renderRoutes({routes}) {
+  logout() {
+    return UserService.logout().then(() => {
+      window.location = '/';
+    })
+    .catch((err) => {
+      window.location = '/';
+    });
+  }
+
+  renderRoutes({ routes }) {
     return routes.map(route => (
       <Link to={route.path} onClick={route.onClick ? route.onClick : () => {}}>{route.title}</Link>
     ));
   }
 
-  logout() {
-    UserService.logout().then(() => {
-      UserService.deleteUserFromLocalStorage();
-    })
-    .catch((err) => {
-      // TODO: handle error
-    });
+  addLogoutRoute({ routes }) {
+    return {
+      routes: !UserService.isLoggedIn() ? routes : routes.concat({
+        title: 'Logout',
+        path: '/logut',
+        onClick: () => {
+          UserService.logout().then(() => {
+            UserService.deleteUserFromLocalStorage();
+          })
+          .catch((err) => {
+            // TODO: handle error
+          });
+        }
+      })
+    };
   }
 
-  generateLogoutButton() {
-    //TODO: check if user is logged in
-    return <a href='/' onClick={ this.logout.bind(this) }>Logout</a>
-  }
-
-  render() {
+  profileImage() {
     const ProfileImageProps = {
       src: 'https://stefanmoraru.ro/assets/me.jpg',
       alt: 'Profilul tău',
       link: '/profil'
     };
 
-    return (
+    return <ProfileImage {...ProfileImageProps} />;
+  }
+
+  render() {
+    return !UserService.isLoggedIn() ? null : (
       <header>
         <nav>
-          {this.renderRoutes({...this.props})}
+          {this.renderRoutes(this.addLogoutRoute({...this.props}))}
         </nav>
 
-        <ProfileImage {...ProfileImageProps} />
+        {this.profileImage()}
       </header>
     );
   }
@@ -46,15 +62,7 @@ class Header extends Component {
 
 Header.defaultProps = {
   routes: [
-    { title: 'Oportunități', path: '/oportunitati' },
-    { title: 'Logout', path: '/logut', onClick: () => {
-      UserService.logout().then(() => {
-        UserService.deleteUserFromLocalStorage();
-      })
-      .catch((err) => {
-        // TODO: handle error
-      });
-    }}
+    { title: 'Oportunități', path: '/oportunitati' }
   ]
 };
 
