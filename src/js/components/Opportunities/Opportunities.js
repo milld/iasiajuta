@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import Opportunity from '../Opportunity/Opportunity';
-import './Opportunities.css';
+import styled from 'styled-components';
 
-class Opportunities extends Component {
-  render() {
-    return (
-      <div className='Opportunities'>
-        <Opportunity />
-        <Opportunity />
-        <Opportunity />
-        <Opportunity />
-      </div>
-    )
-  };
-}
+const OpportunitiesContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+`;
 
-Opportunities.defaultProps = {
-};
+const Opportunities = () => (
+  <OpportunitiesContainer>
+    <Opportunity />
+    <Opportunity />
+    <Opportunity />
+    <Opportunity />
+  </OpportunitiesContainer>
+);
 
 export default Opportunities;

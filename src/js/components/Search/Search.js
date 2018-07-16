@@ -1,24 +1,35 @@
 import React, { Component } from 'react';
-import './Search.css';
+import styled from 'styled-components';
 
-class Search extends Component {
-  renderIcon({ icon }) {
-    return <i className={icon} />;
-  }
+const SearchContainer = styled.div`
+  position: relative;
+`;
 
-  renderInput({ placeholder }) {
-    return <input type='text' placeholder={placeholder} onChange={this.props.searchChange} />;
-  }
+const SearchIcon = styled.i`
+  font-size: 10px;
+  margin-top: -5px;
+  margin-left: 12px;
+  position: absolute;
+  top: 50%;
+`;
 
-  render() {
-    return (
-      <div className='Search'>
-        {this.renderIcon({...this.props})}
-        {this.renderInput({...this.props})}
-      </div>
-    );
-  };
-}
+const SearchInput = styled.input`
+  width: 500px;
+  height: 40px;
+  padding: 8px;
+  padding-left: 30px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 4px;
+  font-size: 12px;
+`;
+
+const Search = ({ icon, placeholder, searchChange }) => (
+  <SearchContainer>
+    <SearchIcon className={icon} />
+    <SearchInput type='text' placeholder={placeholder} onChange={searchChange} />
+  </SearchContainer>
+);
 
 Search.defaultProps = {
   icon: 'fas fa-search',

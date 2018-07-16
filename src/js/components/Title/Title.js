@@ -1,17 +1,29 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import './Title.css';
+import styled from 'styled-components';
 
-class Title extends Component {
-  render() {
-    return (
-      <div>
-        <h1 className='Title'>{this.props.content}</h1>
-        <h2 className='Title'>{this.props.subtitle}</h2>
-      </div>
-    );
-  };
-}
+const MainTitle = styled.h2`
+  color: white;
+  font-weight: 700;
+  display: block;
+  font-size: 2.4em;
+  margin-bottom: 0;
+`;
+
+const Subtitle = styled.h3`
+  color: white;
+  font-weight: 700;
+  display: block;
+  font-size: 1.2em;
+  margin-top: 0;
+`;
+
+const Title = ({ content, subtitle }) => (
+  <div>
+    <MainTitle>{content}</MainTitle>
+    <Subtitle>{subtitle}</Subtitle>
+  </div>
+);
 
 Title.defaultProps = {
   content: null,

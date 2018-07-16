@@ -1,50 +1,77 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from '../Button/Button';
-import './Opportunity.css';
+import styled from 'styled-components';
 
-class Opportunity extends Component {
-  renderImage({image}) {
-    const style = {
-      backgroundImage: `url(${image})`
-    };
+const OpportunityImage = styled.div`
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background-image: url(${props => props.image});
+`;
 
-    return <div className='Opportunity-Image' style={style}></div>;
-  }
+const OpportunityTitle = styled.h3`
+  margin-top: 0;
+  margin-bottom: 4px;
+`;
 
-  renderTitle({title}) {
-    return <h3>{title}</h3>
-  }
+const OpportunityDescription = styled.span`
+  font-size: 12px;
+`;
 
-  renderDescription({description}) {
-    return <span className='Opportunity-Description'>{description}</span>;
-  }
+const OpportunityLogo = styled.img`
+  width: 32px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 100%;
+  opacity: 0.8;
+`;
 
-  renderLogo({logo, title}) {
-    return <img className='Opportunity-Logo' src={logo} alt={title} />;
-  }
+const OpportunityButton = styled(Button)`
+  width: 100%;
+  margin-top: 10px;
+`;
 
-  renderButton({button}) {
-    return <Button content={button.content} link={button.link} />;
-  }
+const OpportunityDetails = styled.div`
+  width: 240px;
+  padding: 12px;
+`;
 
-  render() {
-    return (
-      <div className='Opportunity'>
-        <div className='Opportunity-ImageContainer'>
-          {this.renderImage({...this.props})}
-        </div>
+const OpportunityImageContainer = styled.div`
+  width: 240px;
+  height: 180px;
+`;
 
-        <div className='Opportunity-Details'>
-          {this.renderTitle({...this.props})}
-          {this.renderDescription({...this.props})}
-          {this.renderLogo({...this.props})}
-          {this.renderButton({...this.props})}
-        </div>
-      </div>
-    );
-  }
-};
+const OpportunityContainer = styled.div`
+  width: 500px;
+  height: 180px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+  position: relative;
+  margin-top: 12px;
+  display: flex;
+`;
+
+const Opportunity = ({ image, title, description, logo, button }) => (
+  <OpportunityContainer>
+    <OpportunityImageContainer>
+      <OpportunityImage image={image} />
+    </OpportunityImageContainer>
+
+    <OpportunityDetails>
+      <OpportunityTitle>{title}</OpportunityTitle>
+      <OpportunityDescription>{description}</OpportunityDescription>
+      <OpportunityLogo src={logo} alt={title} />
+      <OpportunityButton content={button.content} link={button.link} />
+    </OpportunityDetails>
+  </OpportunityContainer>
+);
 
 Opportunity.defaultProps = {
   title: 'Heading',
