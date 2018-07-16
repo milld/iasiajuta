@@ -9,13 +9,13 @@ const config = {
   messagingSenderId: '498580213209'
 };
 
-firebase.initializeApp(config);
+const firebaseApp = firebase.initializeApp(config);
 
-export default firebase;
-
-export const database = firebase.database();
-export const auth = firebase.auth();
-export const storage = firebase.storage();
-export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-export const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
-export const messaging = firebase.messaging();
+export default {
+  /* database: firebaseApp.database(),
+  auth: firebaseApp.auth(),
+  storage: firebaseApp.storage(),
+  googleAuthProvider: new firebaseApp.auth.GoogleAuthProvider(),
+  facebookAuthProvider: new firebaseApp.auth.FacebookAuthProvider(),
+  messaging: firebaseApp.messaging() */
+};

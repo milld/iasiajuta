@@ -1,32 +1,86 @@
-import React, { Component, PropTypes } from 'react';
-import './Image.css';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-class BigImage extends Component {
-  renderImage({ src, alt, link, half, small }) {
-    const style = {
-      backgroundImage: `url(${src})`
-    };
+const ImageContainer = styled.img`
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
 
-    const className = 'Image-imageContainer'
-    + (small ? ' Image-small ' : '')
-    + (half ? ' Image-half ' : '');
-    const image = !src ? null : <div className={className} style={style}></div>;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center center;
+  z-index: -1;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.4);
 
-    return link ? <a href={link} target='_blank'>{image}</a> : image;
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+  }
+`;
+
+const SmallImageContainer = ImageContainer.extend`
+  max-height: 40vh;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  box-sizing: content-box;
+`;
+
+const HalfImageContainer = ImageContainer.extend`
+  max-height: 60vh;
+  min-height: 400px;
+`;
+
+const BigImageContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+const Image = ({ url, half, small }) => {
+  let _image;
+
+  if (small) {
+    _image = SmallImageContainer.extend`backgroundImage: url(${url});`;
+  } else if (half) {
+    _image = HalfImageContainer.extend`backgroundImage: url(${url});`;
   }
 
-  render() {
-    return (
-      <div className='BigImage'>
-        {this.props.children}
-        {this.renderImage({...this.props})}
-      </div>
-    );
-  };
-}
+  return url ? <_image src={url} /> : null;
+};
+
+const ImageWithLink = ({ url, half, small, link }) => {
+  const image = <Image url={url} half={half} small={small} />;
+
+  return link ? <a href={link} target='_blank'>{image}</a> : image;
+};
+
+const BigImage = ({ url, alt, link, half, small, children }) => (
+  <BigImageContainer>
+    {children}
+
+    <ImageWithLink url={url} half={half} small={small} link={link} />
+  </BigImageContainer>
+);
 
 BigImage.defaultProps = {
-  src: null,
+  url: null,
   alt: '',
   link: null,
   half: false,
@@ -34,7 +88,7 @@ BigImage.defaultProps = {
 };
 
 BigImage.PropTypes = {
-  src: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
   link: PropTypes.string,
   half: PropTypes.bool,

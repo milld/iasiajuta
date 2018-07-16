@@ -4,14 +4,14 @@ import Title from '../../components/Title/Title';
 import Search from '../../components/Search/Search';
 import Opportunities from '../../components/Opportunities/Opportunities';
 import Footer from '../../components/Footer/Footer';
-import Button from '../../components/Button/Button';
+import { Button } from '../../components/Button/Button';
 import './Oportunitati.css';
 
 class Oportunitati extends Component {
   renderOportunitati({ backgroundImage, title }) {
     return (
       <div className='Oportunitati'>
-        <BigImage src={backgroundImage} alt={title} half={true}>
+        <BigImage url={backgroundImage} alt={title} half={true}>
           <Title content={title} subtitle='Ajutăm voluntariatul impreună' />
 
           <div className='Oportunitati-SearchBar'>

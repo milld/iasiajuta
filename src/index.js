@@ -5,7 +5,9 @@ import { messaging } from './firebase';
 import Login from './js/views/Login/Login';
 import Oportunitati from './js/views/Oportunitati/Oportunitati';
 import OportunitateExistenta from './js/views/Oportunitati/OportunitateExistenta';
+import OportunitateNoua from './js/views/Oportunitati/OportunitateNoua';
 import Header from './js/components/Header/Header';
+import Profil from './js/views/Profil/Profil';
 import './index.css';
 
 const Main = () => (
@@ -13,7 +15,9 @@ const Main = () => (
     <Switch>
       <Route exact path='/' component={Login} />
       <Route exact path='/oportunitati' component={Oportunitati} />
+      <Route exact path='/oportunitati/nou' component={OportunitateNoua} />
       <Route exact path='/oportunitati/:id' component={OportunitateExistenta} />
+      <Route exact path='/profil/:id' component={Profil} />
     </Switch>
   </main>
 );
@@ -33,6 +37,6 @@ ReactDOM.render(
 );
 
 // logging our messaging notification
-messaging.onMessage(payload => {
+/* messaging.onMessage(payload => {
   console.log(payload);
-})
+}) */

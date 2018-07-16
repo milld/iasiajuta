@@ -1,22 +1,16 @@
 import React, {Component} from 'react';
-import './Center.css';
+import styled from 'styled-components';
 
-class Center extends Component {
-  render() {
-    return (
-      <div className='Center'>
-        {this.props.children}
-      </div>
-    );
-  }
-}
+const Centered = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
-Center.defaultProps = {
-
-};
-
-Center.PropTypes = {
-
-};
+const Center = () => (
+  <Centered>
+    {this.props.children}
+  </Centered>
+);
 
 export default Center;

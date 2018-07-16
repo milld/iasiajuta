@@ -2,8 +2,9 @@ import React from 'react';
 import UserService from '../../services/UserService';
 import BigImage from '../../components/Image/BigImage';
 import Title from '../../components/Title/Title';
-import Button from '../../components/Button/Button'
+import { LoginButton } from '../../components/Button/Button'
 import Footer from '../../components/Footer/Footer';
+import PropTypes from 'prop-types';
 import './Login.css';
 
 class Login extends React.Component {
@@ -40,12 +41,12 @@ class Login extends React.Component {
     render() {
         return (
             <section className='Login'>
-                <BigImage src={this.props.backgroundImage} alt='Volunteering'>
+                <BigImage url={this.props.backgroundImage} alt='Volunteering'>
                     <Title content='IașiAjută' subtitle='Drumul spre voluntariat' />
 
                     <div className='LoginButtons'>
-                        <Button content={'Autentifică-te cu Facebook'} onClick={ this.loginWithFacebook.bind(this) } />
-                        <Button content={'Autentifică-te cu Google'} onClick={ this.loginWithGoogle.bind(this) } />
+                        <LoginButton content={'Autentifică-te cu Facebook'} onClick={ this.loginWithFacebook.bind(this) } />
+                        <LoginButton content={'Autentifică-te cu Google'} onClick={ this.loginWithGoogle.bind(this) } />
                     </div>
 
                     {this.state.error}
@@ -64,7 +65,7 @@ Login.defaultProps = {
 };
 
 Login.PropTypes = {
-    backgroundImage: React.PropTypes.isRequired
+    backgroundImage: PropTypes.isRequired
 }
 
 export default Login;

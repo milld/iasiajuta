@@ -1,5 +1,6 @@
-import React, { Component, PropTypes } from 'react';
-import Button from '../Button/Button';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { Button } from '../Button/Button';
 import './Opportunity.css';
 
 class Opportunity extends Component {

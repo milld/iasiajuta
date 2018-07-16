@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import BigImage from '../../components/Image/BigImage';
 import Title from '../../components/Title/Title';
 import Footer from '../../components/Footer/Footer';
-import Button from '../../components/Button/Button';
+import { Button } from '../../components/Button/Button';
 import ProfileImage from '../../components/Image/ProfileImage';
 import OpportunityProgress from '../../components/Opportunity/OpportunityProgress';
 import './Oportunitati.css';
@@ -11,7 +11,7 @@ class OportunitateExistenta extends Component {
   renderOportunitati({ backgroundImage, title, subtitle, profileImage, description, buttonText, progress, date, duration }) {
     return (
       <div className='Oportunitati'>
-        <BigImage src={backgroundImage} alt={title} small={true}>
+        <BigImage url={backgroundImage} alt={title} small={true}>
           <Title content={title} subtitle={subtitle} />
         </BigImage>
 
