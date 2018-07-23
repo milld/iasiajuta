@@ -2,7 +2,7 @@ import React from 'react';
 import UserService from '../../services/UserService';
 import BigImage from '../../components/Image/BigImage';
 import Title from '../../components/Title/Title';
-import { LoginButton } from '../../components/Button/Button'
+import { Button } from '../../components/Button/Button'
 import Footer from '../../components/Footer/Footer';
 import PropTypes from 'prop-types';
 import './Login.css';
@@ -45,8 +45,8 @@ class Login extends React.Component {
                     <Title content='IașiAjută' subtitle='Drumul spre voluntariat' />
 
                     <div className='LoginButtons'>
-                        <LoginButton content={'Autentifică-te cu Facebook'} onClick={ this.loginWithFacebook.bind(this) } />
-                        <LoginButton content={'Autentifică-te cu Google'} onClick={ this.loginWithGoogle.bind(this) } />
+                        <Button content={'Autentifică-te cu Facebook'} onClick={ this.loginWithFacebook.bind(this) } />
+                        <Button content={'Autentifică-te cu Google'} onClick={ this.loginWithGoogle.bind(this) } />
                     </div>
 
                     {this.state.error}

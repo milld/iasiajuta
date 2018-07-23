@@ -48,13 +48,13 @@ const RouteLink = styled(Link)`
   }
 `;
 
-const Route = ({ path, onClick, title }) => (
-  <RouteLink to={path} onClick={onClick ? onClick : () => {}}>{title}</RouteLink>
+const Route = ({ path, onClick, title, routeKey }) => (
+  <RouteLink key={`route-${routeKey}`} to={path} onClick={onClick ? onClick : () => {}}>{title}</RouteLink>
 );
 
 const Routes = ({ routes }) => (
   <div>
-    {routes.filter(route => route.visible).map(route => <Route {...route} />)}
+    {routes.filter(route => route.visible).map((route, i) => <Route {...route} routeKey={i} />)}
   </div>
 );
 

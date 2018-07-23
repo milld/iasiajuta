@@ -39,11 +39,13 @@ const SmallImageContainer = ImageContainer.extend`
   padding-top: 10vh;
   padding-bottom: 10vh;
   box-sizing: content-box;
+  background-image: url(${props => props.url});
 `;
 
 const HalfImageContainer = ImageContainer.extend`
   max-height: 60vh;
   min-height: 400px;
+  background-image: url(${props => props.url});
 `;
 
 const BigImageContainer = styled.div`
@@ -57,12 +59,14 @@ const Image = ({ url, half, small }) => {
   let _image;
 
   if (small) {
-    _image = SmallImageContainer.extend`backgroundImage: url(${url});`;
+    _image = SmallImageContainer;
   } else if (half) {
-    _image = HalfImageContainer.extend`backgroundImage: url(${url});`;
+    _image = HalfImageContainer;
+  } else {
+    _image = BigImageContainer;
   }
 
-  return url ? <_image src={url} /> : null;
+  return url ? <_image url={url} /> : null;
 };
 
 const ImageWithLink = ({ url, half, small, link }) => {

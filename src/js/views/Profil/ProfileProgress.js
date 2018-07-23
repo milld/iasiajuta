@@ -1,12 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 
-class ProfileProgress extends Component {
-  render() {
-    return (
-      <span>hi</span>
-    );
-  }
-}
+const ProfileProgress = () => (
+  <span>Profile progress</span>
+);
 
 ProfileProgress.defaultProps = {
 
