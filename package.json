@@ -12,6 +12,7 @@
     "react-event-calendar": "^0.3.0",
     "react-file-input": "^0.2.5",
     "react-router-dom": "^4.3.1",
+    "react-typeform-embed": "^0.1.6",
     "redux": "^4.0.0",
     "styled-components": "^3.3.3"
   },
