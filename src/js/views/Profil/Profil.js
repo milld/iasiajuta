@@ -7,23 +7,69 @@ import Footer from '../../components/Footer/Footer';
 import Button from '../../components/Button/Button';
 import ProfileImage from '../../components/Image/ProfileImage';
 import ProfileProgress from './ProfileProgress';
+//import UserService from '../../services/UserService';
 import './Profil.css';
 
+const UserService = {
+  getUser: () => {
+    return Promise.resolve({
+      firstName: 'Stefan',
+      lastName: 'Moraru',
+      middleName: null,
+      image: "http://via.placeholder.com/350x150",
+      history: {
+        '1': {
+          //Oportunitate
+          title: '...'
+        }
+      }
+    });
+  }
+};
+
 class Profil extends Component {
-  renderHomepage({ backgroundImage, title, subtitle }) {
-    return (
-      <div className='Oportunitati'>
-        <Title content={title} subtitle={subtitle} />
-        <ProfileImage src='http://via.placeholder.com/350x150' alt='Placeholder' />
-        <ProfileProgress />
-        <Opportunities />
-        <Footer />
-      </div>
-    );
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      user: null
+    };
   }
 
+  componentDidMount() {
+    const userId = this.props.math;
+
+    return UserService.getUser({ id: userId }).then(this.saveUser.bind(this));
+  }
+
+  saveUser(user) {
+    this.setState({
+      user
+    });
+  }
+
+  //TODO: Add loading
   render() {
-    return this.renderHomepage({...this.props});
+    if (!this.state.user) {
+      return (
+        <div>
+          404
+        </div>
+      );
+    }
+
+    //<ProfileProgress />
+
+    return (
+      <div className='Profil'>
+        <BigImage src={this.props.backgroundImage} alt='Volunteering'>
+          <ProfileImage src={this.state.user.image} />
+          <Title content={`${this.state.user.firstName} ${this.state.user.lastName}`} />
+          <Opportunities userId={this.state.user.id} />
+          <Footer />
+        </BigImage>
+      </div>
+    );
   };
 }
 

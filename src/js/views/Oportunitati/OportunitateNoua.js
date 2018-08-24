@@ -8,21 +8,33 @@ import OpportunityProgress from '../../components/Opportunity/OpportunityProgres
 import './Oportunitati.css';
 
 class OportunitateNoua extends Component {
-  renderDescription({description}) {
-    return (
-      <span>{description}</span>
-    );
-  }
-
   render() {
     return (
-      <div>
-        <Title content='IasiAjuta' subtitle='Salvati Copiii' />
-        <ProfileImage src='http://www.protectiacopilului6.ro/thumb_500x500_1838-salvatii-copii.jpg' alt='Volunteering' />
-        <BigImage src='http://wondrlust.com/wp-content/uploads/2017/11/o-STUDENTS-VOLUNTEERING-facebook.jpg' alt='Volunteering' half={true} />
-        {this.renderDescription({...this.props})}
-        <OpportunityProgress opportunity={1} />
-        <Button />
+      <div className='Oportunitati'>
+        <BigImage src={'https://i.imgur.com/BZ4DPfR.jpg'} small={true}>
+          <Title content={'Oportunitate noua'} />
+        </BigImage>
+
+        <div className='Oportunitati-Content-Container'>
+          <div className='Oportunitati-Content'>
+            Titlu oportunitate
+            <input type='text' />
+            Descriere
+            <input type='text' />
+            Adauga imagine
+            <input type='file' />
+
+            Data de inceput
+            <input type='datetime' />
+
+            Calendar
+
+            <div>
+              <Button content={'Noua'} />
+            </div>
+          </div>
+        </div>
+
         <Footer />
       </div>
     );

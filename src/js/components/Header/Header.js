@@ -2,9 +2,34 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import ProfileImage from '../Image/ProfileImage';
-import UserService from '../../services/UserService';
+//import UserService from '../../services/UserService';
+
+const UserService = {
+  getUserFromLocalStorage: () => {
+    return {
+      id: 'stefan-moraru',
+      image: 'http://via.placeholder.com/350x150'
+    };
+  }
+};
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      user: null
+    };
+  }
+
+  componentDidMount() {
+    const user = UserService.getUserFromLocalStorage();
+
+    this.setState({
+      user
+    });
+  }
+
   logout() {
     return UserService.logout().then(() => {
       window.location = '/';
@@ -14,15 +39,29 @@ class Header extends Component {
     });
   }
 
-  renderRoutes({ routes }) {
+  renderRoutes({ routes = [] }) {
     return routes.map(route => (
       <Link to={route.path} onClick={route.onClick ? route.onClick : () => {}}>{route.title}</Link>
     ));
   }
 
-  addLogoutRoute({ routes }) {
-    return {
-      routes: !UserService.isLoggedIn() ? routes : routes.concat({
+  profileImage({ id, image }) {
+    const ProfileImageProps = {
+      src: image,
+      alt: 'Profilul tău',
+      link: `/profil/${id}`
+    };
+
+    return <ProfileImage {...ProfileImageProps} />;
+  }
+
+  render() {
+    let routes = [
+      { title: 'Oportunități', path: '/oportunitati' }
+    ];
+
+    if (this.state.user) {
+      routes = routes.concat({
         title: 'Logout',
         path: '/logut',
         onClick: () => {
@@ -33,28 +72,20 @@ class Header extends Component {
             // TODO: handle error
           });
         }
-      })
-    };
-  }
+      });
+    }
 
-  profileImage() {
-    const ProfileImageProps = {
-      src: 'https://stefanmoraru.ro/assets/me.jpg',
-      alt: 'Profilul tău',
-      link: '/profil'
-    };
+    const profile = this.state.user ? this.profileImage(this.state.user) : null;
 
-    return <ProfileImage {...ProfileImageProps} />;
-  }
+    console.log(routes);
 
-  render() {
-    return !UserService.isLoggedIn() ? null : (
+    return (
       <header>
         <nav>
-          {this.renderRoutes(this.addLogoutRoute({...this.props}))}
+          {this.renderRoutes({ routes })}
         </nav>
 
-        {this.profileImage()}
+        {profile}
       </header>
     );
   }
