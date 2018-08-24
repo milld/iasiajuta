@@ -7,25 +7,25 @@ import Footer from '../../components/Footer/Footer';
 import Button from '../../components/Button/Button';
 import ProfileImage from '../../components/Image/ProfileImage';
 import ProfileProgress from './ProfileProgress';
-//import UserService from '../../services/UserService';
+import UserService from '../../services/UserService';
 import './Profil.css';
 
-const UserService = {
-  getUser: () => {
-    return Promise.resolve({
-      firstName: 'Stefan',
-      lastName: 'Moraru',
-      middleName: null,
-      image: "http://via.placeholder.com/350x150",
-      history: {
-        '1': {
-          //Oportunitate
-          title: '...'
-        }
-      }
-    });
-  }
-};
+// const UserService = {
+//   getUser: () => {
+//     return Promise.resolve({
+//       firstName: 'Stefan',
+//       lastName: 'Moraru',
+//       middleName: null,
+//       image: "http://via.placeholder.com/350x150",
+//       history: {
+//         '1': {
+//           //Oportunitate
+//           title: '...'
+//         }
+//       }
+//     });
+//   }
+// };
 
 class Profil extends Component {
   constructor(props) {

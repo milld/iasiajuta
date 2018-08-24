@@ -1,4 +1,4 @@
-import { auth, googleAuthProvider, facebookAuthProvider } from '../../firebase';
+import { auth, googleAuthProvider, facebookAuthProvider, database } from '../../firebase';
 
 const USER = 'user';
 const USER_CREDENTIAL = 'userCredential';
@@ -53,6 +53,15 @@ const isLoggedIn = () => {
     return true;
 };
 
+const getUser = (userId) => new Promise((resolve, reject) => {
+    database.ref('/users/' + userId).once('value').then(function (snapshot) {
+        resolve(snapshot.val());
+    })
+    .catch((error) => {
+        reject(error);
+    });
+});
+
 export default {
     loginWithGoogle,
     loginWithFacebook,
@@ -61,5 +70,6 @@ export default {
     deleteUserFromLocalStorage,
     getUserFromLocalStorage,
     getUserCredentialFromLocalStorage,
-    isLoggedIn
+    isLoggedIn,
+    getUser
 }
