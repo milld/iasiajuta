@@ -1,4 +1,5 @@
 import React from 'react';
+import FormBuilder from 'react-form-creator';
 import BigImage from '../../components/Image/BigImage';
 import Title from '../../components/Title/Title';
 import Footer from '../../components/Footer/Footer';
@@ -14,6 +15,7 @@ const OportunitateNoua = ({ content, subtitle, profileImage, backgroundImage, de
     <BigImage url={backgroundImage} alt='Volunteering' half={true} />
     <span>{description}</span>
     <OpportunityProgress opportunity={1} />
+    <FormBuilder />
     <Button content={button.content} onClick={button.onClick} />
     <Footer />
   </div>
