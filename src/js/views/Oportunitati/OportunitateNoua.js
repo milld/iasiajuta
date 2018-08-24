@@ -8,9 +8,74 @@ import OpportunityProgress from '../../components/Opportunity/OpportunityProgres
 import './Oportunitati.css';
 
 class OportunitateNoua extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      title: '',
+      description: '',
+      image: '',
+      days: []
+    };
+  }
+
+  addDay() {
+    this.setState({
+      days: this.state.days.concat({
+        id: (Math.random() * 100).toString(),
+        start: new Date(),
+        end: new Date()
+      })
+    });
+  }
+
+  removeDay({ id }) {
+    this.setState({
+      days: this.state.days.filter(day => day.id !== id)
+    });
+  }
+
+  updateDayTime(id, field, event) {
+    this.setState({
+      days: this.state.days.map(day => {
+        if (day.id === id) {
+          day[field] = event.target.value;
+        }
+
+        return day;
+      })
+    });
+  }
+
+  renderDays(days = []) {
+    return days.map(day => (
+      <div>
+        Data
+        <input type="date" value={day.date} onChange={this.updateDayTime.bind(this, day.id, 'date')} />
+
+        Inceput
+        <input type='text' value={day.start} placeholder='00:00' />
+
+        Sfarsit
+        <input type='text' value={day.end} placeholder='00:00' />
+      </div>
+    ));
+  }
+
+  addDay() {
+    this.setState({
+      days: this.state.days.concat({})
+    });
+  }
+
+  createNewOpportunity() {
+    //TODO
+    const opportunity = this.state;
+  }
+
   render() {
     return (
-      <div className='Oportunitati'>
+      <div className='OportunitateNoua'>
         <BigImage src={'https://i.imgur.com/BZ4DPfR.jpg'} small={true}>
           <Title content={'Oportunitate noua'} />
         </BigImage>
@@ -20,17 +85,16 @@ class OportunitateNoua extends Component {
             Titlu oportunitate
             <input type='text' />
             Descriere
-            <input type='text' />
+            <textarea></textarea>
             Adauga imagine
             <input type='file' />
 
-            Data de inceput
-            <input type='datetime' />
-
-            Calendar
+            Zile
+            <button onClick={this.addDay.bind(this)}>Adauga zi</button>
+            {this.renderDays(this.state.days)}
 
             <div>
-              <Button content={'Noua'} />
+              <Button content={'Noua'} onClick={this.createNewOpportunity.bind(this)} />
             </div>
           </div>
         </div>
