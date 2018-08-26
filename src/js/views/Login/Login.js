@@ -39,20 +39,16 @@ class Login extends React.Component {
 
     render() {
         return (
-            <section className='Login'>
-                <BigImage src={this.props.backgroundImage} alt='Volunteering'>
-                    <Title content='IașiAjută' subtitle='Drumul spre voluntariat' />
+        <section className='Login'>
+            <div className='Login__buttons'>
+                <h1>LOGHEAZA-TE</h1>
 
-                    <div className='LoginButtons'>
-                        <Button content={'Autentifică-te cu Facebook'} onClick={ this.loginWithFacebook.bind(this) } />
-                        <Button content={'Autentifică-te cu Google'} onClick={ this.loginWithGoogle.bind(this) } />
-                    </div>
+                <Button content={'Autentifică-te cu Facebook'} onClick={ this.loginWithFacebook.bind(this) } />
+                <Button content={'Autentifică-te cu Google'} onClick={ this.loginWithGoogle.bind(this) } />
+            </div>
 
-                    {this.state.error}
-                </BigImage>
-
-                <Footer />
-            </section>
+            <Footer />
+        </section>
         );
     }
 };

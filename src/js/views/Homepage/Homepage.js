@@ -1,58 +1,44 @@
-import React, { Component } from 'react';
-import Opportunity from '../Opportunity/Opportunity';
-import './Opportunities.css';
+import React, { Component, PropTypes } from 'react';
+import Footer from '../../components/Footer/Footer';
 
-import OpportunityService from '../../services/OpportunityService';
-
-class Opportunities extends Component {
-  state = {
-    opportunities: [],
-    error: null
-  };
+class Homepage extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
   componentDidMount() {
-    OpportunityService.registerOpportunityListener(this.setOpportunitiesInState, this.setError);
-  }
 
-  componentWillUnmount() {
-    OpportunityService.unregisterOpportunityListener();
-  }
-
-  setInState(prop, value) {
-    this.setState({
-      prop: value
-    })
-  }
-
-  setError(error) {
-    this.setInState('error', error);
-  }
-
-  setOpportunitiesInState(opportunities) {
-    this.setInState('opportunities', opportunities)
-  }
-
-  createOpportunities() {
-    return this.state.opportunities.map((opportunity) => {
-      <Opportunity opportunity={opportunity}/>
-    });
   }
 
   render() {
-
-    if (this.state.error) {
-      return (
-        <div className='error'>
-          {this.state.error}
-        </div>
-      )
-    }
-
-    const opportunities = this.createOpportunities();
-
     return (
-      <div className='Opportunities'>
-        {opportunities}
+      <div className='Homepage'>
+
+        <div className='Homepage__top'>
+          <div className='Homepage__top__content'>
+            <h1>Acum poti si tu</h1>
+            <h1>sa <span>AJUTI</span>.</h1>
+            <h3>Tu alegi cum, cat, unde</h3>
+
+            <button className='button button--green'>
+              Vreau sa ajut
+            </button>
+          </div>
+
+          <div className='Homepage__top__image'>
+          </div>
+
+          <div className='Homepage__top__palace'>
+            <img src='/palatulculturii.png' />
+          </div>
+        </div>
+
+        <div className='Homepage__opportunitiesfilter'>
+          <div>
+            <h3>Oportunitati de voluntariat</h3>
+          </div>
+        </div>
+
         <div className='Homepage__opportunities'>
           <div className='Homepage__opportunities__opportunitycontainer'>
             <div className='Homepage__opportunities__opportunity' style={{ backgroundImage: 'url(https://i.imgur.com/YfO2A3o.jpg' }}>
@@ -87,12 +73,15 @@ class Opportunities extends Component {
             </div>
           </div>
         </div>
+
+        <div className='Homepage__cta'>
+          <button className='button button--green'>Vezi toate oportunitatile</button>
+        </div>
+
+        <Footer />
       </div>
-    )
-  };
+    );
+  }
 }
 
-Opportunities.defaultProps = {
-};
-
-export default Opportunities;
+export default Homepage;

@@ -11,16 +11,18 @@ class Oportunitati extends Component {
   renderOportunitati({ backgroundImage, title }) {
     return (
       <div className='Oportunitati'>
-        <BigImage src={backgroundImage} alt={title} half={true}>
-          <Title content={title} subtitle='Ajutăm voluntariatul impreună' />
-
-          <div className='Oportunitati-SearchBar'>
-            <Search options={this.props.searchOptions} onChange={this.props.searchChange} />
-            <Button link="/oportunitati/nou" content="Contribuie" />
+        <div className='Homepage__opportunitiesfilter'>
+          <div>
+            <h3>Oportunitati de voluntariat</h3>
           </div>
+        </div>
 
-          <Opportunities />
-        </BigImage>
+        <div className='Oportunitati-SearchBar'>
+          <Search options={this.props.searchOptions} onChange={this.props.searchChange} />
+          <Button link="/oportunitate-noua" content="Adauga oportunitate noua" />
+        </div>
+
+        <Opportunities />
         <Footer />
       </div>
     );

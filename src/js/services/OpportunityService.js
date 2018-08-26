@@ -10,13 +10,18 @@ const registerOpportunityListener = (callback, errorCallback) =>  {
         .catch((error) => {
             errorCallback(error);
         });
-}
+};
 
 const unregisterOpportunityListener = () => {
     opportunities.off();
-}
+};
+
+const createOpportunity = (opportunity) => {
+
+};
 
 export default {
     registerOpportunityListener,
-    unregisterOpportunityListener
+    unregisterOpportunityListener,
+    createOpportunity
 }

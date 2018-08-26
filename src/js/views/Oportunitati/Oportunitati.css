@@ -13,12 +13,18 @@
   border-radius: 4px;
 }
 
-.Oportunitati-Content img {
-  width: 40%;
+.Oportunitati-Content-Day {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.Oportunitati-Content .Button {
-  width: auto;
+.Oportunitati-Content-Day h5 {
+  margin-bottom: 4px;
+}
+
+.Oportunitati-Content img {
+  width: 40%;
 }
 
 .Oportunitati-Content i {
@@ -46,17 +52,18 @@
 }
 
 .Oportunitati-SearchBar {
-  width: 500px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .Oportunitati-SearchBar .Search input {
   width: 370px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-right: 10px;
 }
 
 .Oportunitati-SearchBar .Button {
-  width: 120px;
+  padding: 0 10px;
 }
 
 .Oportunitati-Description {
@@ -70,7 +77,7 @@
 }
 
 .OportunitateNoua {
-
+  padding-top: 60px;
 }
 
 .OportunitateNoua input, .OportunitateNoua textarea {

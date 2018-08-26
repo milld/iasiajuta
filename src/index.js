@@ -8,12 +8,15 @@ import OportunitateExistenta from './js/views/Oportunitati/OportunitateExistenta
 import OprtunitateNoua from './js/views/Oportunitati/OportunitateNoua';
 import Profil from './js/views/Profil/Profil';
 import Header from './js/components/Header/Header';
+import Homepage from './js/views/Homepage/Homepage';
 import './index.css';
+import './iasiajuta.css';
 
 const Main = () => (
   <main>
     <Switch>
-      <Route exact path='/' component={Login} />
+      <Route exact path='/' component={Homepage} />
+      <Route exact path='/login' component={Login} />
       <Route exact path='/oportunitati' component={Oportunitati} />
       <Route exact path='/oportunitati/:id' component={OportunitateExistenta} />
       <Route exact path='/oportunitate-noua' component={OprtunitateNoua} />

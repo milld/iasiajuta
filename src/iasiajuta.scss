@@ -1,0 +1,300 @@
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 0;
+
+  &.button--white {
+    background-color: white;
+  }
+
+  &.button--green {
+    background-color: #2ecc71;
+    color: white;
+  }
+}
+
+.Oportunitate {
+  &__header {
+    width: 80%;
+    height: 140px;
+    margin-left: 10%;
+    margin-top: 40px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2ecc71;
+
+    h1 {
+      margin-bottom: 0;
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+
+    &__image {
+      width: 80px;
+      height: 80px;
+      border-radius: 100%;
+      overflow: hidden;
+
+      img {
+        width: 140px;
+        height: 140px;
+      }
+    }
+
+    &__title {
+      color: white;
+    }
+
+    &__cta {
+
+    }
+  }
+
+  &__details {
+    width: 80%;
+    height: 140px;
+    margin-left: 10%;
+    border: 1px solid rgba(0, 0, 0 ,0.2);
+    border-radius: 4px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__detail {
+      flex: 1 1 33%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+
+      &__circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        border: 1px solid #2ecc71;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        margin-right: 10px;
+      }
+
+      &__content {
+
+      }
+    }
+  }
+
+  &__description {
+    width: 80%;
+    margin-left: 10%;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  &__images {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20px;
+    img {
+      width: 200px;
+      border-radius: 4px;
+    }
+  }
+}
+
+.Login {
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 140px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h1 {
+      font-weight: 700;
+    }
+  }
+}
+
+.Homepage {
+  background-color: white;
+
+  &__header {
+    background-color: rgb(244, 244, 244);
+    padding: 20px;
+    padding-bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+      img {
+        width: 140px;
+      }
+    }
+
+    &__navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &__item {
+        padding: 10px;
+        margin: 10px;
+
+        &--action {
+          background-color: #2ecc71;
+          border-radius: 2px;
+          color: white;
+        }
+      }
+    }
+  }
+
+  &__top {
+    background-color: rgb(244, 244, 244);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__content {
+      position: relative;
+      z-index: 1;
+      padding-right: 200px;
+
+      span {
+        color: #2ecc71;
+      }
+
+      h1 {
+        margin: 0;
+        font-weight: 700;
+      }
+    }
+
+    &__image {
+      width: 200px;
+      height: 200px;
+      margin: 40px;
+      position: relative;
+      z-index: 1;
+      background-image: url('https://i.imgur.com/YfO2A3o.jpg');
+      background-size: cover;
+      border-radius: 100%;
+    }
+
+    &__palace {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+
+      img {
+        position: absolute;
+        left: 40%;
+        bottom: 0;
+        height: 100%;
+      }
+    }
+  }
+
+  &__opportunitiesfilter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+    padding-top: 20px;
+
+    h3 {
+      position: relative;
+
+      &:before {
+        content: '';
+        display: block;
+        width: 50%;
+        height: 4px;
+        background-color: #2ecc71;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+      }
+    }
+  }
+
+  &__opportunities {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 80px;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    &__opportunitycontainer {
+      flex: 1 1 50%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+  
+    &__opportunity {
+      padding: 20px 10px;
+      border-radius: 5px;
+      background-size: cover;
+      background-position: center center;
+      color: white;
+      position: relative;
+
+      &__content {
+        position: relative;
+        z-index: 1;
+        
+        h2 {
+          font-weight: bold;
+        }
+      }
+
+      &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(46, 204, 113, 0.7);
+        z-index: 0;
+      }
+
+      h2 {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

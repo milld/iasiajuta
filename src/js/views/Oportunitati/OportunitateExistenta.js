@@ -9,6 +9,67 @@ import './Oportunitati.css';
 
 class OportunitateExistenta extends Component {
   renderOportunitati({ backgroundImage, title, subtitle, profileImage, description, buttonText, progress, date, duration }) {
+    return(
+      <div className='Oportunitate'>
+        <div className='Oportunitate__header'>
+          <div className='Oportunitate__header__image'>
+            <img src='https://i.imgur.com/BZ4DPfR.jpg' />
+          </div>
+
+          <div className='Oportunitate__header__title'>
+            <h1>Voluntariat IasiAjuta</h1>
+            <h3>Organizat de: Stefan Moraru</h3>
+
+            Fb Google Twitter
+          </div>
+
+          <div className='Oportunitate__header__cta'>
+            <button className='button button--white'>
+              Vreau sa ajut
+            </button>
+          </div>
+        </div>
+
+        <div className='Oportunitate__details'>
+          <div className='Oportunitate__details__detail'>
+            <div className='Oportunitate__details__detail__circle'>
+              V
+            </div>
+
+            <div className='Oportunitate__details__detail__content'>
+              Inscrierile sunt deschise
+            </div>
+          </div>
+          <div className='Oportunitate__details__detail'>
+            <div className='Oportunitate__details__detail__circle'>
+              V
+            </div>
+
+            <div className='Oportunitate__details__details__content'>
+              Inscrierile sunt deschise
+            </div>
+          </div>
+          <div className='Oportunitate__details__detail'>
+            <div className='Oportunitate__details__detail__circle'>
+              V
+            </div>
+
+            <div className='Oportunitate__details__details__content'>
+              Inscrierile sunt deschise
+            </div>
+          </div>
+        </div>
+
+        <div className='Oportunitate__description'>
+          {description}
+        </div>
+
+        <div className='Oportunitate__images'>
+          <img src='https://i.imgur.com/BZ4DPfR.jpg' />
+        </div>
+      </div>
+    );
+
     return (
       <div className='Oportunitati'>
         <BigImage src={backgroundImage} alt={title} small={true}>

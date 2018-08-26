@@ -49,15 +49,21 @@ class OportunitateNoua extends Component {
 
   renderDays(days = []) {
     return days.map(day => (
-      <div>
-        Data
-        <input type="date" value={day.date} onChange={this.updateDayTime.bind(this, day.id, 'date')} />
+      <div className='Oportunitati-Content-Day'>
+        <div>
+          <h5>Data</h5>
+          <input type="date" value={day.date} onChange={this.updateDayTime.bind(this, day.id, 'date')} />
+        </div>
 
-        Inceput
-        <input type='text' value={day.start} placeholder='00:00' />
+        <div>
+          <h5>Inceput</h5>
+          <input type='time' value={day.start} placeholder='00:00' />
+        </div>
 
-        Sfarsit
-        <input type='text' value={day.end} placeholder='00:00' />
+        <div>
+          <h5>Sfarsit</h5>
+          <input type='time' value={day.end} placeholder='00:00' />
+        </div>
       </div>
     ));
   }
@@ -82,19 +88,21 @@ class OportunitateNoua extends Component {
 
         <div className='Oportunitati-Content-Container'>
           <div className='Oportunitati-Content'>
-            Titlu oportunitate
+            <h4>Titlu oportunitate</h4>
             <input type='text' />
-            Descriere
+            <h4>Descriere</h4>
             <textarea></textarea>
-            Adauga imagine
+            <h4>Adauga imagine</h4>
             <input type='file' />
 
-            Zile
-            <button onClick={this.addDay.bind(this)}>Adauga zi</button>
+            <h4>Zilele in care se desfasoara activitatea</h4>
+
             {this.renderDays(this.state.days)}
 
+            <Button content={'Adauga zi'} small={true} onClick={this.addDay.bind(this)} />
+
             <div>
-              <Button content={'Noua'} onClick={this.createNewOpportunity.bind(this)} />
+              <Button content={'Creeaza oportunitate'} onClick={this.createNewOpportunity.bind(this)} />
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 .Button {
-  width: 500px;
+  width: auto;
   height: 40px;
   background-color: #2ecc71;
   border-radius: 4px;
@@ -10,6 +10,10 @@
   cursor: pointer;
   position: relative;
   transition-duration: 0.4s;
+}
+
+.Button.Button--Small {
+  width: 100px;
 }
 
 .Button::after {

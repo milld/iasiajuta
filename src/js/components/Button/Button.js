@@ -3,14 +3,26 @@ import { Link } from 'react-router-dom';
 import './Button.css';
 
 class Button extends Component {
-  renderButton({ link, content, onClick }) {
+  renderButton({ link, content, small, onClick }) {
+    let className = 'Button ' + (small ? 'Button--Small' : '');
+
+    let rendered = (
+      <div className={className}>
+        <span className='ButtonContent'>{content}</span>
+      </div>
+    );
+
+    if (link) {
+      rendered = (
+        <Link to={link}>
+          {rendered}
+        </Link>
+      );
+    };
+
     return (
       <div className='ButtonContainer' onClick={onClick}>
-        <Link to={link}>
-          <div className='Button'>
-              <span className='ButtonContent'>{content}</span>
-          </div>
-        </Link>
+        {rendered}
       </div>
     );
   }
@@ -23,6 +35,7 @@ class Button extends Component {
 Button.defaultProps = {
   link: '',
   content: '',
+  small: false,
   onClick: () => {
   }
 };

@@ -80,6 +80,28 @@ class Header extends Component {
     console.log(routes);
 
     return (
+      <div className='Homepage__header'>
+        <Link to='/'>
+          <div className='Homepage__header__logo'>
+            <img src='/logo_iasiajuta.png' />
+          </div>
+        </Link>
+
+        <div className='Homepage__header__navbar'>
+          <div className='Homepage__header__navbar__item'>
+            Despre IasiAjuta
+          </div>
+          <div className='Homepage__header__navbar__item'>
+            Voluntariat
+          </div>
+          <div className='Homepage__header__navbar__item Homepage__header__navbar__item--action'>
+            Logheaza-te
+          </div>
+        </div>
+      </div>
+    );
+
+    return (
       <header>
         <nav>
           {this.renderRoutes({ routes })}
