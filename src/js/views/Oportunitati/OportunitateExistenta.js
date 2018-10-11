@@ -12,15 +12,15 @@ class OportunitateExistenta extends Component {
     return(
       <div className='Oportunitate'>
         <div className='Oportunitate__header'>
-          <div className='Oportunitate__header__image'>
-            <img src='https://i.imgur.com/BZ4DPfR.jpg' />
-          </div>
+          <div className='Oportunitate__header__info'>
+            <div className='Oportunitate__header__image'>
+              <img src='https://i.imgur.com/BZ4DPfR.jpg' />
+            </div>
 
-          <div className='Oportunitate__header__title'>
-            <h1>Voluntariat IasiAjuta</h1>
-            <h3>Organizat de: Stefan Moraru</h3>
-
-            Fb Google Twitter
+            <div className='Oportunitate__header__title'>
+              <h1>Voluntariat IasiAjuta</h1>
+              <h3>Organizat de: Asociatia de Voluntariat</h3>
+            </div>
           </div>
 
           <div className='Oportunitate__header__cta'>
@@ -32,30 +32,30 @@ class OportunitateExistenta extends Component {
 
         <div className='Oportunitate__details'>
           <div className='Oportunitate__details__detail'>
-            <div className='Oportunitate__details__detail__circle'>
-              V
+            <div className='Oportunitate__details__detail__circle success'>
+              <i className='fas fa-check' />
             </div>
 
             <div className='Oportunitate__details__detail__content'>
-              Inscrierile sunt deschise
+              <h3>Inscrierile sunt deschise</h3>
             </div>
           </div>
           <div className='Oportunitate__details__detail'>
-            <div className='Oportunitate__details__detail__circle'>
-              V
+            <div className='Oportunitate__details__detail__circle info'>
+              <i className='fas fa-users' />
             </div>
 
             <div className='Oportunitate__details__details__content'>
-              Inscrierile sunt deschise
+              <h3>Membrii inscrisi</h3>
             </div>
           </div>
           <div className='Oportunitate__details__detail'>
-            <div className='Oportunitate__details__detail__circle'>
-              V
+            <div className='Oportunitate__details__detail__circle yellow'>
+              <i className='fas fa-coins' />
             </div>
 
             <div className='Oportunitate__details__details__content'>
-              Inscrierile sunt deschise
+              <h3>Puncte primite: 100</h3>
             </div>
           </div>
         </div>

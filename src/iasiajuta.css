@@ -18,21 +18,29 @@ button {
   margin-top: 40px;
   border-radius: 4px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
   align-items: center;
   background-color: #2ecc71; }
+  .Oportunitate__header__info {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
   .Oportunitate__header h1 {
-    margin-bottom: 0; }
+    margin: 0; }
   .Oportunitate__header h3 {
-    margin-top: 0; }
+    margin: 0; }
+  .Oportunitate__header__title, .Oportunitate__header__image, .Oportunitate__header__cta {
+    margin-right: 20px; }
   .Oportunitate__header__image {
-    width: 80px;
-    height: 80px;
+    width: 102px;
+    height: 102px;
     border-radius: 100%;
     overflow: hidden; }
     .Oportunitate__header__image img {
-      width: 140px;
-      height: 140px; }
+      width: 102px;
+      height: 102px; }
   .Oportunitate__header__title {
     color: white; }
 
@@ -56,12 +64,24 @@ button {
       width: 100px;
       height: 100px;
       border-radius: 100%;
-      border: 1px solid #2ecc71;
       display: flex;
       justify-content: center;
       align-items: center;
       font-size: 30px;
-      margin-right: 10px; }
+      margin-right: 10px;
+      border: 1px solid gray; }
+      .Oportunitate__details__detail__circle.success {
+        background-color: rgba(46, 204, 113, 0.2);
+        border: 1px solid #2ecc71;
+        color: #2ecc71; }
+      .Oportunitate__details__detail__circle.info {
+        background-color: rgba(135, 206, 250, 0.2);
+        border: 1px solid lightskyblue;
+        color: lightskyblue; }
+      .Oportunitate__details__detail__circle.yellow {
+        background-color: rgba(255, 215, 0, 0.2);
+        border: 1px solid gold;
+        color: gold; }
 
 .Oportunitate__description {
   width: 80%;
