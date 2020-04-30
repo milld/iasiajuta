@@ -3,7 +3,13 @@
   "description": "Cloud Functions for Firebase",
   "dependencies": {
     "firebase-admin": "~4.1.2",
-    "firebase-functions": "^0.5"
+    "firebase-functions": "^0.5",
+    "snyk": "^1.316.1"
   },
-  "private": true
+  "private": true,
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
